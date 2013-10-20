@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoMunicipioCreateDlg" widgetVar="CatalogoMunicipioCreateDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.CreateCatalogoMunicipioTitle}">
+
+            <h:form id="CatalogoMunicipioCreateForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{catalogoMunicipioController.selected != null}">
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoMunicipioLabel_idCatalogoMunicipio}" for="idCatalogoMunicipio" />
+                        <p:inputText id="idCatalogoMunicipio" value="#{catalogoMunicipioController.selected.idCatalogoMunicipio}" title="#{myBundle.CreateCatalogoMunicipioTitle_idCatalogoMunicipio}" required="true" requiredMessage="#{myBundle.CreateCatalogoMunicipioRequiredMessage_idCatalogoMunicipio}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoMunicipioLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{catalogoMunicipioController.selected.nombre}" title="#{myBundle.CreateCatalogoMunicipioTitle_nombre}" required="true" requiredMessage="#{myBundle.CreateCatalogoMunicipioRequiredMessage_nombre}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoMunicipioLabel_idCatalogoDepartamento}" for="idCatalogoDepartamento" />
+                        <p:selectOneMenu id="idCatalogoDepartamento" value="#{catalogoMunicipioController.selected.idCatalogoDepartamento}" required="true" requiredMessage="#{myBundle.EditCatalogoMunicipioRequiredMessage_idCatalogoDepartamento}" converter="catalogoDepartamentoConverter">
+                            <f:selectItem itemLabel="#{myBundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{catalogoDepartamentoController.items}"
+                                           var="idCatalogoDepartamentoItem"
+                                           itemValue="#{idCatalogoDepartamentoItem}"
+                                           itemLabel="#{idCatalogoDepartamentoItem.idCatalogoDepartamento.toString()}"
+                                           />
+
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{catalogoMunicipioController.saveNew}" value="#{myBundle.Save}" update="display,:CatalogoMunicipioListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,CatalogoMunicipioCreateDialog);"/>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="CatalogoMunicipioCreateDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

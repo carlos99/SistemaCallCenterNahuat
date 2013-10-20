@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoEstudioCreateDlg" widgetVar="CatalogoEstudioCreateDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.CreateCatalogoEstudioTitle}">
+
+            <h:form id="CatalogoEstudioCreateForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{catalogoEstudioController.selected != null}">
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoEstudioLabel_idCatalogoEstudio}" for="idCatalogoEstudio" />
+                        <p:inputText id="idCatalogoEstudio" value="#{catalogoEstudioController.selected.idCatalogoEstudio}" title="#{myBundle.CreateCatalogoEstudioTitle_idCatalogoEstudio}" required="true" requiredMessage="#{myBundle.CreateCatalogoEstudioRequiredMessage_idCatalogoEstudio}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoEstudioLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{catalogoEstudioController.selected.nombre}" title="#{myBundle.CreateCatalogoEstudioTitle_nombre}" required="true" requiredMessage="#{myBundle.CreateCatalogoEstudioRequiredMessage_nombre}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoEstudioLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{catalogoEstudioController.selected.descripcion}" title="#{myBundle.CreateCatalogoEstudioTitle_descripcion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{catalogoEstudioController.saveNew}" value="#{myBundle.Save}" update="display,:CatalogoEstudioListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,CatalogoEstudioCreateDialog);"/>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="CatalogoEstudioCreateDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>
