@@ -24,7 +24,14 @@
 
 
                     <p:commandButton value="Ver Planilla" styleClass="btn-empresa" update="" 
-                                     oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View"></p:commandButton>
+                                     oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">   
+                    </p:commandButton>
+                    
+                    <h:outputLink id="link1" value="http://www.mycompany.com">
+                        <f:param name="projectId" value="123" />
+                        <f:param name="userId" value="45" />
+                        <h:outputText value="Open Project" />
+                    </h:outputLink>
 
 
                     <br/>
