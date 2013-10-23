@@ -1,0 +1,24 @@
+
+root { 
+    display: block;
+}
+
+body{
+    background: #ccc;
+}
+
+.wrapper-scch{
+    margin: auto;
+    width: 30%;
+}
+
+.opcion-salir{
+    font-weight: bold;
+    text-align: right;
+}
+
+#form-login{
+    margin: 6em auto auto;
+    width: 100%;
+}
+

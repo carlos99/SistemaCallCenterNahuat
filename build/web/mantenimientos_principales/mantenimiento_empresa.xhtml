@@ -7,13 +7,13 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Mantenimiento Empresa</title>
-        <link rel="stylesheet" href="../resources/css/styles.css" type="text/css"></link>
+        
     </h:head>
     <h:body>
-         <ui:composition template="/WEB-INF/templates/main-template.xhtml">
+<!--         <ui:composition template="/WEB-INF/templates/main-template.xhtml">
             <ui:define name="header">           
             </ui:define>
-        </ui:composition>
+        </ui:composition>-->
         <h:form id="manto-empresa">
             <div id="content-manto-empresa">
                 <h:panelGrid id="display" class="empresa-table" columns="4" cellpadding="2" style="margin:0 auto;">
@@ -37,9 +37,6 @@
                         <f:param name="userId" value="45" />
 <!--                        <h:outputText value="Open Project" />-->
                     </h:outputLink>
-
-
-                    <br/>
 
                     <h:outputText styleClass="out-empresa" value="Nombre:" /> 
                     <p:inputText styleClass="input-empresa"/>

@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Bienvenido</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panelGrid> 
+                <f:facet name="header">  
+                    <p:row>  
+                        <p:column colspan="4">Creación de Planilla</p:column>  
+                    </p:row> 
+                </f:facet>  
+                <p:row>  
+                    <p:column>
+                        <h:outputLabel for="planilla" value="N° Planilla: *" /> 
+                    </p:column>  
+                    <p:column>
+                        <p:inputText id="planilla" value="" label="Planilla" />
+                    </p:column>  
+                    <p:column >
+                        <h:outputLabel for="periodo" value="Periodo: *" /> 
+                    </p:column>  
+                    <p:column>
+                        <p:inputText id="periodo" value="" required="true" label="Periodo"/> 
+                    </p:column> 
+                </p:row>  
+
+
+                <p:row>  
+                    <p:column>
+                        <h:outputLabel for="fechacreacion" value="Fecha Creación: *" />
+
+                    </p:column>  
+                    <p:column>
+                        <p:calendar></p:calendar>
+                    </p:column>  
+
+                    <p:column>
+                        <h:outputLabel for="fechapago" value="Fecha Pago: *" />
+
+                    </p:column>  
+                    <p:column>
+                        <p:calendar></p:calendar>
+                    </p:column>  
+                </p:row>  
+
+                <p:row>  
+                    <p:column>
+                        <h:outputLabel for="estado" value="Estado: *" />
+                    </p:column>  
+                    <p:column>
+                        <p:inputText id="cpestado" value="" label="Planilla" />
+                    </p:column>  
+                    <p:column>
+                        <h:outputLabel for="total_pagar" value="Total a Pagar: *" />
+                    </p:column>  
+                    <p:column >
+                        <p:inputText id="tpagar" value="" label="Planilla" />
+                    </p:column>  
+                </p:row> 
+                 
+
+<!--                <p:row>  
+                    <p:column  colspan="1" style="text-align: right">  
+                        <p:commandButton type="button" value="Guardar" icon="ui-icon-check" style="margin:0"/> 
+                    </p:column>  
+                    <p:column  colspan="1" rowspan="1">  
+                        <p:commandButton type="button" value="Guardar y Salir" icon="ui-icon-check" style="margin:0"/>  
+                    </p:column>  
+                    <p:column  colspan="1" rowspan="1">  
+                        <p:commandButton type="button" value="Salir sin Guardar" icon="ui-icon-check" style="margin:0"/>  
+                    </p:column>
+
+                </p:row>-->
+
+                <p:row>  
+                    <p:column  colspan="1">  
+                        <h:outputLabel for="estado" value="Empleado: *" />
+                    </p:column>  
+                    
+                    <p:column  colspan="3" rowspan="1">  
+                        <p:selectOneMenu id="c-em" value="Empleado" style="width: 240px;">  
+                            <f:selectItem itemLabel="" itemValue="" />  
+                            <f:selectItem itemLabel="Carlos Orellana" itemValue=" " />  
+                            <f:selectItem itemLabel="Josué Cortez" itemValue="" /> 
+                            <f:selectItem itemLabel="Nelson Najera" itemValue="" /> 
+                        </p:selectOneMenu> 
+                    </p:column>  
+<!--                    <p:column  colspan="1" rowspan="1">  
+                        <p:commandButton type="button" value="Salir sin Guardar" icon="ui-icon-check" style="margin:0"/>  
+                    </p:column>-->
+
+                </p:row>
+
+               <p:row> 
+                   
+                    <p:column  colspan="1">  
+                        Tipo de Ingreso
+                        <br/>
+                        <br/>
+                        <h:outputLabel for="hextra" value="Horas Extra: *" />
+                    </p:column>  
+                    Dia minutos
+                    <p:column  colspan="1" rowspan="1">  
+                        <p:inputText id="hextra" value="" label="Hora" />
+                    </p:column> 
+                   <br/>
+                   <p:column  colspan="1">  
+                        <p:inputText id="ltarde" value="" label="Ltarde" />
+                    </p:column>  
+                    
+                    <p:column  colspan="1" rowspan="1">
+                        Acción
+                        <br/>
+                        <p:selectOneMenu id="c-ltarde" value="Llegada" style="width: 240px;">  
+                            <f:selectItem itemLabel="" itemValue="" />  
+                            <f:selectItem itemLabel="" itemValue="San Salvador" />  
+                            <f:selectItem itemLabel="" itemValue="San Miguel" />  
+                        </p:selectOneMenu> 
+                    </p:column>
+                </p:row>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
