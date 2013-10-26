@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoEdepartamentoCreateDlg" widgetVar="CatalogoEdepartamentoCreateDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.CreateCatalogoEdepartamentoTitle}">
+
+            <h:form id="CatalogoEdepartamentoCreateForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{catalogoEdepartamentoController.selected != null}">
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoEdepartamentoLabel_idCatalogoEdepartamento}" for="idCatalogoEdepartamento" />
+                        <p:inputText id="idCatalogoEdepartamento" value="#{catalogoEdepartamentoController.selected.idCatalogoEdepartamento}" title="#{myBundle.CreateCatalogoEdepartamentoTitle_idCatalogoEdepartamento}" required="true" requiredMessage="#{myBundle.CreateCatalogoEdepartamentoRequiredMessage_idCatalogoEdepartamento}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoEdepartamentoLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{catalogoEdepartamentoController.selected.nombre}" title="#{myBundle.CreateCatalogoEdepartamentoTitle_nombre}" required="true" requiredMessage="#{myBundle.CreateCatalogoEdepartamentoRequiredMessage_nombre}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoEdepartamentoLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{catalogoEdepartamentoController.selected.descripcion}" title="#{myBundle.CreateCatalogoEdepartamentoTitle_descripcion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{catalogoEdepartamentoController.saveNew}" value="#{myBundle.Save}" update="display,:CatalogoEdepartamentoListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,CatalogoEdepartamentoCreateDialog);"/>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="CatalogoEdepartamentoCreateDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

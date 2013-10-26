@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoHorarioCreateDlg" widgetVar="CatalogoHorarioCreateDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.CreateCatalogoHorarioTitle}">
+
+            <h:form id="CatalogoHorarioCreateForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{catalogoHorarioController.selected != null}">
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoHorarioLabel_idCatalogoHorario}" for="idCatalogoHorario" />
+                        <p:inputText id="idCatalogoHorario" value="#{catalogoHorarioController.selected.idCatalogoHorario}" title="#{myBundle.CreateCatalogoHorarioTitle_idCatalogoHorario}" required="true" requiredMessage="#{myBundle.CreateCatalogoHorarioRequiredMessage_idCatalogoHorario}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoHorarioLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{catalogoHorarioController.selected.nombre}" title="#{myBundle.CreateCatalogoHorarioTitle_nombre}" required="true" requiredMessage="#{myBundle.CreateCatalogoHorarioRequiredMessage_nombre}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoHorarioLabel_horaInicio}" for="horaInicio" />
+                        <p:calendar id="horaInicio" pattern="MM/dd/yyyy HH:mm:ss" value="#{catalogoHorarioController.selected.horaInicio}" title="#{myBundle.EditCatalogoHorarioTitle_horaInicio}" required="true" requiredMessage="#{myBundle.EditCatalogoHorarioRequiredMessage_horaInicio}" showOn="button"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoHorarioLabel_horaFin}" for="horaFin" />
+                        <p:calendar id="horaFin" pattern="MM/dd/yyyy HH:mm:ss" value="#{catalogoHorarioController.selected.horaFin}" title="#{myBundle.EditCatalogoHorarioTitle_horaFin}" required="true" requiredMessage="#{myBundle.EditCatalogoHorarioRequiredMessage_horaFin}" showOn="button"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoHorarioLabel_diaInicio}" for="diaInicio" />
+                        <p:inputText id="diaInicio" value="#{catalogoHorarioController.selected.diaInicio}" title="#{myBundle.CreateCatalogoHorarioTitle_diaInicio}" required="true" requiredMessage="#{myBundle.CreateCatalogoHorarioRequiredMessage_diaInicio}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoHorarioLabel_diaFinal}" for="diaFinal" />
+                        <p:inputText id="diaFinal" value="#{catalogoHorarioController.selected.diaFinal}" title="#{myBundle.CreateCatalogoHorarioTitle_diaFinal}" />
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoHorarioLabel_totalHoras}" for="totalHoras" />
+                        <p:inputText id="totalHoras" value="#{catalogoHorarioController.selected.totalHoras}" title="#{myBundle.CreateCatalogoHorarioTitle_totalHoras}" required="true" requiredMessage="#{myBundle.CreateCatalogoHorarioRequiredMessage_totalHoras}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{catalogoHorarioController.saveNew}" value="#{myBundle.Save}" update="display,:CatalogoHorarioListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,CatalogoHorarioCreateDialog);"/>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="CatalogoHorarioCreateDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

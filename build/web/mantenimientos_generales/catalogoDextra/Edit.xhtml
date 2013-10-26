@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoDextraEditDlg" widgetVar="CatalogoDextraEditDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.EditCatalogoDextraTitle}">
+
+            <h:form id="CatalogoDextraEditForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid  columns="2" rendered="#{catalogoDextraController.selected != null}">
+
+                        <h:outputLabel value="#{myBundle.EditCatalogoDextraLabel_idCatalogoDextra}" for="idCatalogoDextra" />
+                        <h:outputText id="idCatalogoDextra" value="#{catalogoDextraController.selected.idCatalogoDextra}" />
+
+                        <p:outputLabel value="#{myBundle.EditCatalogoDextraLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{catalogoDextraController.selected.nombre}" title="#{myBundle.EditCatalogoDextraTitle_nombre}" required="true" requiredMessage="#{myBundle.EditCatalogoDextraRequiredMessage_nombre}"/>
+
+                        <p:outputLabel value="#{myBundle.EditCatalogoDextraLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{catalogoDextraController.selected.descripcion}" title="#{myBundle.EditCatalogoDextraTitle_descripcion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{catalogoDextraController.save}" value="#{myBundle.Save}" update="display,:CatalogoDextraListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,CatalogoDextraEditDialog);"/>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="CatalogoDextraEditDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PrestacionDescuentoViewDlg" widgetVar="PrestacionDescuentoViewDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.ViewPrestacionDescuentoTitle}">
+
+            <h:form id="PrestacionDescuentoViewForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{prestacionDescuentoController.selected != null}">
+
+                        <h:outputText value="#{myBundle.ViewPrestacionDescuentoLabel_idPrestacionDescuento}"/>
+                        <h:outputText value="#{prestacionDescuentoController.selected.idPrestacionDescuento}" title="#{myBundle.ViewPrestacionDescuentoTitle_idPrestacionDescuento}"/>
+
+                        <h:outputText value="#{myBundle.ViewPrestacionDescuentoLabel_nombre}"/>
+                        <h:outputText value="#{prestacionDescuentoController.selected.nombre}" title="#{myBundle.ViewPrestacionDescuentoTitle_nombre}"/>
+
+                        <h:outputText value="#{myBundle.ViewPrestacionDescuentoLabel_porcentaje}"/>
+                        <h:outputText value="#{prestacionDescuentoController.selected.porcentaje}" title="#{myBundle.ViewPrestacionDescuentoTitle_porcentaje}"/>
+
+                        <h:outputText value="#{myBundle.ViewPrestacionDescuentoLabel_cantidadMaxima}"/>
+                        <h:outputText value="#{prestacionDescuentoController.selected.cantidadMaxima}" title="#{myBundle.ViewPrestacionDescuentoTitle_cantidadMaxima}"/>
+
+                        <h:outputText value="#{myBundle.ViewPrestacionDescuentoLabel_descripcion}"/>
+                        <h:outputText value="#{prestacionDescuentoController.selected.descripcion}" title="#{myBundle.ViewPrestacionDescuentoTitle_descripcion}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{myBundle.Close}" onclick="PrestacionDescuentoViewDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

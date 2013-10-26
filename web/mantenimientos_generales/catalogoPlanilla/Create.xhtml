@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoPlanillaCreateDlg" widgetVar="CatalogoPlanillaCreateDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.CreateCatalogoPlanillaTitle}">
+
+            <h:form id="CatalogoPlanillaCreateForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{catalogoPlanillaController.selected != null}">
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoPlanillaLabel_idCatalogoPlanilla}" for="idCatalogoPlanilla" />
+                        <p:inputText id="idCatalogoPlanilla" value="#{catalogoPlanillaController.selected.idCatalogoPlanilla}" title="#{myBundle.CreateCatalogoPlanillaTitle_idCatalogoPlanilla}" required="true" requiredMessage="#{myBundle.CreateCatalogoPlanillaRequiredMessage_idCatalogoPlanilla}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoPlanillaLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{catalogoPlanillaController.selected.nombre}" title="#{myBundle.CreateCatalogoPlanillaTitle_nombre}" required="true" requiredMessage="#{myBundle.CreateCatalogoPlanillaRequiredMessage_nombre}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoPlanillaLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{catalogoPlanillaController.selected.descripcion}" title="#{myBundle.CreateCatalogoPlanillaTitle_descripcion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{catalogoPlanillaController.saveNew}" value="#{myBundle.Save}" update="display,:CatalogoPlanillaListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,CatalogoPlanillaCreateDialog);"/>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="CatalogoPlanillaCreateDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

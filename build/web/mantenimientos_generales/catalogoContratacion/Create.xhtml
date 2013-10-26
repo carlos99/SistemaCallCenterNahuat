@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoContratacionCreateDlg" widgetVar="CatalogoContratacionCreateDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.CreateCatalogoContratacionTitle}">
+
+            <h:form id="CatalogoContratacionCreateForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{catalogoContratacionController.selected != null}">
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoContratacionLabel_idCatalogoContratacion}" for="idCatalogoContratacion" />
+                        <p:inputText id="idCatalogoContratacion" value="#{catalogoContratacionController.selected.idCatalogoContratacion}" title="#{myBundle.CreateCatalogoContratacionTitle_idCatalogoContratacion}" required="true" requiredMessage="#{myBundle.CreateCatalogoContratacionRequiredMessage_idCatalogoContratacion}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoContratacionLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{catalogoContratacionController.selected.nombre}" title="#{myBundle.CreateCatalogoContratacionTitle_nombre}" required="true" requiredMessage="#{myBundle.CreateCatalogoContratacionRequiredMessage_nombre}"/>
+
+                        <p:outputLabel value="#{myBundle.CreateCatalogoContratacionLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{catalogoContratacionController.selected.descripcion}" title="#{myBundle.CreateCatalogoContratacionTitle_descripcion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{catalogoContratacionController.saveNew}" value="#{myBundle.Save}" update="display,:CatalogoContratacionListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,CatalogoContratacionCreateDialog);"/>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="CatalogoContratacionCreateDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>
