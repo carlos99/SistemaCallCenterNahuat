@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Detalle del Ingreso de Planilla </title>
+        <link rel="stylesheet" href="../resources/css/styles.css" type="text/css"></link>
+    </h:head>
+    <h:body>
+        <h:form id="manto-empresa">
+            <div id="content-manto-empresa">
+                <p:panel header="Catálogo de Ingresos" footer="" >
+                    <h:panelGrid id="display" class="empresa-table" columns="2" cellpadding="5" style="margin:0 auto;">
+                        <!---->
+                        <h:outputText styleClass="out-empresa" value="ID:" /> 
+                        <p:inputText styleClass="input-id"/>
+                        <!---->
+                        <h:outputText value="Monto:" /> 
+                        <p:inputText  styleClass="input-monto"/>
+                        <!---->
+                        <h:outputText styleClass=""  value="Catalogo de Ingreso:"/> 
+                        <p:selectOneMenu id="c-em" value="">  
+                            <f:selectItem itemLabel="" itemValue="" />  
+                            <f:selectItem itemLabel="" itemValue="" />  
+                            <f:selectItem itemLabel="" itemValue="" />  
+                        </p:selectOneMenu> 
+                         <!---->
+                        <h:outputText styleClass=""  value="Detalle de Planilla:"/> 
+                        <p:selectOneMenu id="asd" value="">  
+                            <f:selectItem itemLabel="" itemValue="" />  
+                            <f:selectItem itemLabel="" itemValue="" />  
+                            <f:selectItem itemLabel="" itemValue="" />  
+                        </p:selectOneMenu> 
+
+                    </h:panelGrid>
+                    <!---->                    
+                </p:panel>
+            </div>         
+        </h:form>
+    </h:body>
+</html>

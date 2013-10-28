@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Contratación</title>
+    </h:head>
+    <h:body>
+        <h:form id="pcontratacion">
+            <h:panelGrid id="display" class="empresa-table" columns="4" cellpadding="5" style="margin:0 auto;">
+                <h:outputText styleClass="out-empresa" value="Id Contratación:" /> 
+                <p:inputText styleClass="input-empresa"/>
+
+                <h:outputText value="Fecha Inicio" /> 
+                <p:calendar></p:calendar>
+
+                <h:outputText styleClass="out-em"  value="Salario Actual"/> 
+                <p:inputText styleClass="input-empresa in-emm" required="true"/>
+
+                <h:outputText styleClass="out-em"  value="Fecha Fin"/> 
+                <p:calendar></p:calendar>
+
+                <h:outputText styleClass="out-em"  value="Empresa"/> 
+                <p:inputText value="(Nombre Empresa)" disabled="true" styleClass="input-empresa in-emm" required="true"/>
+
+                <h:outputText styleClass="out-em"  value="Empleado"/> 
+                <p:inputText value="(Nombre Empleado)" disabled="true" styleClass="input-empresa in-emm" required="true"/>
+
+                <h:outputText styleClass="out-em"  value="Horario Laboral"/> 
+                <p:inputText value="Diurno" disabled="true" styleClass="input-empresa in-emm" required="true"/>
+
+                <h:outputText styleClass="out-em"  value="Tipo de Contratacion"/> 
+                <p:inputText value="Temporada" disabled="true" styleClass="input-empresa in-emm" required="true"/>
+
+                <h:outputText styleClass="out-em"  value="Cargo"/> 
+                <p:inputText value="Atencion al Cliente" disabled="true" styleClass="input-empresa in-emm" required="true"/>
+            </h:panelGrid>
+
+            <!-- Botones de CRUD -->
+            <br/>
+
+            <h:form>
+                <h:commandButton value="Ingresar" title="View" action="contratacion"></h:commandButton>
+
+                <h:commandButton value="Consultar" title="View"></h:commandButton>
+
+                <h:commandButton value="Modificar" title="View"></h:commandButton>
+
+                <h:commandButton value="Limpiar Campos" title="View"></h:commandButton>
+            </h:form>
+
+            <br/>
+            <br/>
+
+            <!--            ********** Inicio de DataTable **********-->
+
+            <h:form>  
+                <p:dataTable var="car" value="#{tableBean.carsSmall}">  
+                    <f:facet name="header">  
+                        Contrataciones 
+                    </f:facet>
+                    <p:column headerText="Id">  
+                        <h:outputText value="#{car.model}" />  
+                    </p:column>  
+
+                    <p:column headerText="Salario Actual">  
+                        <h:outputText value="#{car.year}" />  
+                    </p:column>  
+
+                    <p:column headerText="Fecha Inicio">  
+                        <h:outputText value="#{car.manufacturer}" />  
+                    </p:column>  
+
+                    <p:column headerText="Fecha Fin">  
+                        <h:outputText value="#{car.color}" />  
+                    </p:column>  
+                    <p:column headerText="Empresa">  
+                        <h:outputText value="#{car.color}" />  
+                    </p:column> 
+                    <p:column headerText="Empleado">  
+                        <h:outputText value="#{car.color}" />  
+                    </p:column> 
+                    <p:column headerText="Horario Laboral">  
+                        <h:outputText value="#{car.color}" />  
+                    </p:column> 
+                    <p:column headerText="Tipo Contratacion">  
+                    </p:column>
+                    <p:column headerText="Cargo">  
+                    </p:column>
+                </p:dataTable>  
+            </h:form>  
+        </h:form>
+    </h:body>
+</html>
+
