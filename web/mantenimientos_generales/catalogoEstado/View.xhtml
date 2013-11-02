@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoEstadoViewDlg" widgetVar="CatalogoEstadoViewDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.ViewCatalogoEstadoTitle}">
+
+            <h:form id="CatalogoEstadoViewForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{catalogoEstadoController.selected != null}">
+
+                        <h:outputText value="#{myBundle.ViewCatalogoEstadoLabel_idCatalogoEstado}"/>
+                        <h:outputText value="#{catalogoEstadoController.selected.idCatalogoEstado}" title="#{myBundle.ViewCatalogoEstadoTitle_idCatalogoEstado}"/>
+
+                        <h:outputText value="#{myBundle.ViewCatalogoEstadoLabel_nombre}"/>
+                        <h:outputText value="#{catalogoEstadoController.selected.nombre}" title="#{myBundle.ViewCatalogoEstadoTitle_nombre}"/>
+
+                        <h:outputText value="#{myBundle.ViewCatalogoEstadoLabel_descripcion}"/>
+                        <h:outputText value="#{catalogoEstadoController.selected.descripcion}" title="#{myBundle.ViewCatalogoEstadoTitle_descripcion}"/>
+
+                        <h:outputText value="#{myBundle.ViewCatalogoEstadoLabel_entidad}"/>
+                        <h:outputText value="#{catalogoEstadoController.selected.entidad}" title="#{myBundle.ViewCatalogoEstadoTitle_entidad}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{myBundle.Close}" onclick="CatalogoEstadoViewDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

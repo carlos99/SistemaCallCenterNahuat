@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoIdiomaEditDlg" widgetVar="CatalogoIdiomaEditDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.EditCatalogoIdiomaTitle}">
+
+            <h:form id="CatalogoIdiomaEditForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid  columns="2" rendered="#{catalogoIdiomaController.selected != null}">
+
+                        <h:outputLabel value="#{myBundle.EditCatalogoIdiomaLabel_idCatalogoIdioma}" for="idCatalogoIdioma" />
+                        <h:outputText id="idCatalogoIdioma" value="#{catalogoIdiomaController.selected.idCatalogoIdioma}" />
+
+                        <p:outputLabel value="#{myBundle.EditCatalogoIdiomaLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{catalogoIdiomaController.selected.nombre}" title="#{myBundle.EditCatalogoIdiomaTitle_nombre}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{catalogoIdiomaController.save}" value="#{myBundle.Save}" update="display,:CatalogoIdiomaListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,CatalogoIdiomaEditDialog);"/>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="CatalogoIdiomaEditDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

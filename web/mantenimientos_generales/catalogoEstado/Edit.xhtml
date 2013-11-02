@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoEstadoEditDlg" widgetVar="CatalogoEstadoEditDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.EditCatalogoEstadoTitle}">
+
+            <h:form id="CatalogoEstadoEditForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid  columns="2" rendered="#{catalogoEstadoController.selected != null}">
+
+                        <h:outputLabel value="#{myBundle.EditCatalogoEstadoLabel_idCatalogoEstado}" for="idCatalogoEstado" />
+                        <h:outputText id="idCatalogoEstado" value="#{catalogoEstadoController.selected.idCatalogoEstado}" />
+
+                        <p:outputLabel value="#{myBundle.EditCatalogoEstadoLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{catalogoEstadoController.selected.nombre}" title="#{myBundle.EditCatalogoEstadoTitle_nombre}" required="true" requiredMessage="#{myBundle.EditCatalogoEstadoRequiredMessage_nombre}"/>
+
+                        <p:outputLabel value="#{myBundle.EditCatalogoEstadoLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{catalogoEstadoController.selected.descripcion}" title="#{myBundle.EditCatalogoEstadoTitle_descripcion}" />
+
+                        <p:outputLabel value="#{myBundle.EditCatalogoEstadoLabel_entidad}" for="entidad" />
+                        <p:inputText id="entidad" value="#{catalogoEstadoController.selected.entidad}" title="#{myBundle.EditCatalogoEstadoTitle_entidad}" required="true" requiredMessage="#{myBundle.EditCatalogoEstadoRequiredMessage_entidad}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{catalogoEstadoController.save}" value="#{myBundle.Save}" update="display,:CatalogoEstadoListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,CatalogoEstadoEditDialog);"/>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="CatalogoEstadoEditDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

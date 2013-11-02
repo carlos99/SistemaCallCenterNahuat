@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoDepartamentoEditDlg" widgetVar="CatalogoDepartamentoEditDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.EditCatalogoDepartamentoTitle}">
+
+            <h:form id="CatalogoDepartamentoEditForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid  columns="2" rendered="#{catalogoDepartamentoController.selected != null}">
+
+                        <h:outputLabel value="#{myBundle.EditCatalogoDepartamentoLabel_idCatalogoDepartamento}" for="idCatalogoDepartamento" />
+                        <h:outputText id="idCatalogoDepartamento" value="#{catalogoDepartamentoController.selected.idCatalogoDepartamento}" />
+
+                        <p:outputLabel value="#{myBundle.EditCatalogoDepartamentoLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{catalogoDepartamentoController.selected.nombre}" title="#{myBundle.EditCatalogoDepartamentoTitle_nombre}" required="true" requiredMessage="#{myBundle.EditCatalogoDepartamentoRequiredMessage_nombre}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{catalogoDepartamentoController.save}" value="#{myBundle.Save}" update="display,:CatalogoDepartamentoListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,CatalogoDepartamentoEditDialog);"/>
+                    <p:commandButton value="#{myBundle.Cancel}" onclick="CatalogoDepartamentoEditDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

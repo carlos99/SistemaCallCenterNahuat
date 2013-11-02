@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CatalogoPeriodoViewDlg" widgetVar="CatalogoPeriodoViewDialog" modal="true" resizable="false" appendToBody="true" header="#{myBundle.ViewCatalogoPeriodoTitle}">
+
+            <h:form id="CatalogoPeriodoViewForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{catalogoPeriodoController.selected != null}">
+
+                        <h:outputText value="#{myBundle.ViewCatalogoPeriodoLabel_idCatalogoPeriodo}"/>
+                        <h:outputText value="#{catalogoPeriodoController.selected.idCatalogoPeriodo}" title="#{myBundle.ViewCatalogoPeriodoTitle_idCatalogoPeriodo}"/>
+
+                        <h:outputText value="#{myBundle.ViewCatalogoPeriodoLabel_nombre}"/>
+                        <h:outputText value="#{catalogoPeriodoController.selected.nombre}" title="#{myBundle.ViewCatalogoPeriodoTitle_nombre}"/>
+
+                        <h:outputText value="#{myBundle.ViewCatalogoPeriodoLabel_fechaInicio}"/>
+                        <h:outputText value="#{catalogoPeriodoController.selected.fechaInicio}" title="#{myBundle.ViewCatalogoPeriodoTitle_fechaInicio}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+
+                        <h:outputText value="#{myBundle.ViewCatalogoPeriodoLabel_fechaFin}"/>
+                        <h:outputText value="#{catalogoPeriodoController.selected.fechaFin}" title="#{myBundle.ViewCatalogoPeriodoTitle_fechaFin}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+
+                        <h:outputText value="#{myBundle.ViewCatalogoPeriodoLabel_totalDias}"/>
+                        <h:outputText value="#{catalogoPeriodoController.selected.totalDias}" title="#{myBundle.ViewCatalogoPeriodoTitle_totalDias}"/>
+
+                        <h:outputText value="#{myBundle.ViewCatalogoPeriodoLabel_idCatalogoEstado}"/>
+                        <h:outputText value="#{catalogoPeriodoController.selected.idCatalogoEstado.descripcion}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{myBundle.Close}" onclick="CatalogoPeriodoViewDialog.hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>
