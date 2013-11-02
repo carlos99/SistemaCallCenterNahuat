@@ -8,8 +8,9 @@ body{
 }
 
 .wrapper-scch{
+    background: #778899;
     margin: auto;
-    width: 30%;
+    width: 90%;
 }
 
 .opcion-salir{
