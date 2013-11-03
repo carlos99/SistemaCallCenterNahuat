@@ -1,18 +1,4 @@
 
-root { 
-    display: block;
-}
-
-body{
-    background: #ccc;
-}
-
-.wrapper-scch{
-    background: #778899;
-    margin: auto;
-    width: 90%;
-}
-
 .opcion-salir{
     font-weight: bold;
     text-align: right;
@@ -23,3 +9,62 @@ body{
     width: 100%;
 }
 
+/* *************** Estlilos personales *************** */
+
+.wrapper-content{
+    background: #ece3a5;
+    height: 600px;
+    margin: auto;
+    width: 90%;
+}
+
+#main-header{
+    background: url("../images/bg_top.jpg");
+    height: 120px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#logo-img, #nav{
+    display: inline-block;
+}
+
+#logo-img{
+    background: none;
+    margin-left: 8.3em;
+    vertical-align: bottom;
+    width: 20%;
+    
+}
+
+#nav{
+    background: none;
+    vertical-align: top;
+    width: 64%;
+}
+
+#main-menu{
+    margin: auto 10em;
+    padding: 2.5em;
+}
+
+#main-menu li{ 
+    display: inline-block;
+    padding: 0.3em;
+}
+
+#main-menu li a{
+    border-right: 2px solid #CCCCCC;
+    color: #FFFFFF;
+    font-size: 25px;
+    padding: 0.2em;
+    text-decoration: none;
+}
+
+#main-menu li a:hover{
+    border-right: 2px solid #CCCCCC;
+    color: #f60;
+    font-size: 25px;
+    padding: 0.2em;
+    text-decoration: none;
+}

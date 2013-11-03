@@ -8,22 +8,6 @@
             <base-name>/MyBundle</base-name>
             <var>myBundle</var>
         </resource-bundle>
-        <resource-bundle>
-            <base-name>/MyBundle</base-name>
-            <var>myBundle</var>
-        </resource-bundle>
-        <resource-bundle>
-            <base-name>/MyBundle</base-name>
-            <var>myBundle</var>
-        </resource-bundle>
-        <resource-bundle>
-            <base-name>/MyBundle</base-name>
-            <var>myBundle</var>
-        </resource-bundle>
-        <resource-bundle>
-            <base-name>/MyBundle</base-name>
-            <var>myBundle</var>
-        </resource-bundle>
     </application>
     <managed-bean>
         <managed-bean-name>planillaBean</managed-bean-name>
@@ -45,7 +29,5 @@
         <managed-bean-class>com.isw2.nahuat.bean.PlanillaBean</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
-    <application>
-        <message-bundle>error</message-bundle>
-    </application>
+    
 </faces-config>
