@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="./../template.xhtml">
+
+    <ui:define name="title">
+        <h:outputText value="#{myBundle.WizPlanTitle}"/>
+    </ui:define>
+
+    <ui:define name="body">
+        <h:form id="CatalogoCargoViewForm">
+
+            <p:panel  header="#{myBundle.WizPlanTitle}">
+                <p:wizard flowListener="#{MbPlanillaController.onFlowProcess}"  nextLabel="#{myBundle.WizPlanNext}" backLabel="#{myBundle.WizPlanBack}" >  
+                    <p:tab id="datosGenerales" title="#{myBundle.WizTab1Title}">  
+                        <p:panel header="#{myBundle.WizTab1Panel}">  
+                            <h:panelGrid columns="4" >  
+                                <h:outputText value="#{myBundle.WizTab1IdPlanilla}" />  
+                                <p:inputText id="itIdPlanilla" value="" readonly="true" />  
+
+                                <h:outputText value="#{myBundle.WizTab1Estado}" />  
+                                <p:inputText id="itEstado" value="" readonly="true" />  
+
+                                <h:outputText value="#{myBundle.WizTab1FCreacion}" />  
+                                <p:calendar id="caFCreacion" mode="popup" showOn="button" showButtonPanel="true" navigator="true"
+                                            pattern="dd/MM/yyyy"  mindate="01/11/2013" maxdate="30/11/2013" />
+
+                                <h:outputText value="#{myBundle.WizTab1FPago}" />  
+                                <p:calendar id="caFCPago" mode="popup" showOn="button" showButtonPanel="true" navigator="true"
+                                            pattern="dd/MM/yyyy" pagedate="getDate()"/>
+
+                                <h:outputText value="#{myBundle.WizTab1Periodo}" />  
+                                <p:selectOneMenu >  
+                                    <f:selectItem itemLabel="Seleccione uno" itemValue="" />  
+                                    <f:selectItem itemLabel="periodo 1 [NOV]" itemValue="1" />  
+                                    <f:selectItem itemLabel="periodo 2 [NOV]" itemValue="2" />  
+                                </p:selectOneMenu>  
+                                F
+
+                                <h:outputText value="#{myBundle.wizTab1TotalPago}" />  
+                                <p:inputText id="itTotalPago" value="" readonly="true" /> 
+
+                                <h:outputText value="#{myBundle.WizPlanSkip}" />  
+                                <h:selectBooleanCheckbox value="#{MbPlanillaController.skip}" />  
+                            </h:panelGrid> 
+                            <p:watermark for="itIdPlanilla" value="auto - generado" /> 
+                            <p:watermark for="itEstado" value="Creado" /> 
+                            <p:watermark for="itTotalPago" value="auto - generado" /> 
+                        </p:panel>  
+                    </p:tab>  
+                    <p:tab id="datosMarcacion" title="#{myBundle.WizTab2Title}">  
+                        <p:panel header="#{myBundle.WizTab2Panel}">
+                        </p:panel>
+                    </p:tab>
+                    <p:tab id="descExtras" title="#{myBundle.WizTab3Title}">  
+                        <p:panel header="#{myBundle.WizTab3Panel}">
+                        </p:panel>
+                    </p:tab>
+                    <p:tab id="Confirmacion" title="#{myBundle.WizTab4Title}">  
+                        <p:panel header="#{myBundle.WizTab4Panel}">
+                        </p:panel>
+                    </p:tab>
+                </p:wizard>
+            </p:panel>
+
+        </h:form>
+    </ui:define>
+
+</ui:composition>
