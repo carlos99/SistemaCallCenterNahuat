@@ -24,6 +24,10 @@
                     <p:inputText id="sitioweb" value="" label="sitioweb" required="true"
                                  requiredMessage="Ingresar Sitio Web."/>
                     
+                    <h:outputText value="Teléfono: " />  
+                    <p:inputMask value="" mask="(999) 9999-9999" required="true"
+                                 requiredMessage="Ingrese un número de teléfono."/>
+                    
 <!--                    <h:outputLabel for="telefono" value="Teléfono:"/>  
                         <p:inputMask value="" label="telefono" mask="(999) 9999-9999" size="20" required="true"
                                  requiredMessage="Ingresa un número de teléfono."
@@ -48,6 +52,61 @@
                    
                 </p:panelGrid>
             </h:form>
+            
+            <h:form>  
+
+            <p:panel header="Masks">  
+                <h:panelGrid columns="2" cellpadding="5">  
+                    <h:outputText value="Date: " />  
+                    <p:inputMask value="#{maskController.date}" mask="99/99/9999"/>  
+
+                    <h:outputText value="Phone: " />  
+                    <p:inputMask value="#{maskController.phone}" mask="(999) 999-9999"/>  
+
+                    <h:outputText value="Phone with Ext: " />  
+                    <p:inputMask value="#{maskController.phoneExt}"   
+                                 mask="(999) 999-9999? x99999"/>  
+
+                    <h:outputText value="taxId: " />  
+                    <p:inputMask value="#{maskController.taxId}" mask="99-9999999"/>  
+
+                    <h:outputText value="SSN: " />  
+                    <p:inputMask value="#{maskController.ssn}" mask="999-99-9999"/>  
+
+                    <h:outputText value="Product Key: " />  
+                    <p:inputMask value="#{maskController.productKey}" mask="a*-999-a999"/>  
+
+                    <p:commandButton value="Reset" type="reset" />  
+                    <p:commandButton value="Submit" update="display" oncomplete="PF('dlg').show()"/>  
+
+                </h:panelGrid>  
+            </p:panel>  
+
+            <p:dialog widgetVar="dlg" modal="true">  
+                <h:panelGrid id="display" columns="2" cellpadding="5">  
+
+                    <h:outputText value="Date: " />  
+                    <h:outputText value="#{maskController.date}" />  
+
+                    <h:outputText value="Phone: " />  
+                    <h:outputText value="#{maskController.phone}" />  
+
+                    <h:outputText value="Phone with Ext: " />  
+                    <h:outputText value="#{maskController.phoneExt}"/>  
+
+                    <h:outputText value="taxId: " />  
+                    <h:outputText value="#{maskController.taxId}" />  
+
+                    <h:outputText value="SSN: " />  
+                    <h:outputText value="#{maskController.ssn}" />  
+
+                    <h:outputText value="Product Key: " />  
+                    <h:outputText value="#{maskController.productKey}" />  
+
+                </h:panelGrid>  
+            </p:dialog>  
+
+        </h:form>
         </ui:define>
     </ui:composition>
 
