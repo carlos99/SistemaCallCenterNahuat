@@ -28,30 +28,40 @@
                     <p:inputMask value="" mask="(999) 9999-9999" required="true"
                                  requiredMessage="Ingrese un número de teléfono."/>
                     
-                    <h:outputLabel for="nombre" value="Nombre:" />
+                    <h:outputLabel for="nombre" value="Nombre: *" />
                     <p:inputText id="nombre" value="" label="nombre" required="true"
                                  requiredMessage="Ingrese un nombre por favor."/>
                     
-<!--                    <h:outputLabel for="telefono" value="Teléfono:"/>  
-                        <p:inputMask value="" label="telefono" mask="(999) 9999-9999" size="20" required="true"
-                                 requiredMessage="Ingresa un número de teléfono."
-                                 validatorMessage="Por favor ingresa un formato válido."/>-->
+                    <h:outputText value="Dirección:" /> 
+                    <p:inputText required="true"
+                                 requiredMessage="Ingrese una Dirección."/>
+
+                    <h:outputText value="Configuración: *"/>
+                    <p:selectOneMenu id="configuracion-empresa" value="" required="true"
+                                 requiredMessage="Seleccione una Configuración.">  
+                        <f:selectItem itemLabel="Activo" itemValue="activo" />  
+                        <f:selectItem itemLabel="Inactivo" itemValue="inactivo" />  
+                    </p:selectOneMenu>
                     
-<!--                    <h:outputLabel value="Teléfono:" />  
-                    <p:inputMask value="telefono" mask="(999) 999-9999" required="true"
-                                 requiredMessage="Ingresa un número de teléfono."/>  -->
-                     
-                    
-<!--                    <h:outputLabel value="Nombre: *"/>
-                    <p:inputText id="nombre" required="true" label="nombre" 
-                                 requiredMessage="Ingrese un nombre por favor."    
-                                 value="">
-                    </p:inputText>-->
-<!--                    <p:message for="nombre" />-->
+                   <h:outputText value="Rubro: *"/>
+                   <p:selectOneMenu id="rubro-empresa" value="" required="true"
+                                 requiredMessage="Seleccione un Rubro.">  
+                        <f:selectItem itemLabel="Publica" itemValue="publica" />  
+                        <f:selectItem itemLabel="Privada" itemValue="privada" />  
+                        <f:selectItem itemLabel="ONG" itemValue="ong" />  
+                    </p:selectOneMenu>
+
+                    <h:outputText value="Estado empresa:"/>
+                    <p:selectOneMenu id="e-em" value="#{pprBean.city}">  
+                        <f:selectItem itemLabel="Activo" itemValue="" />  
+                        <f:selectItem itemLabel="Inactivo" itemValue="San Salvador" />  
+                    </p:selectOneMenu>
     
                     <f:facet name="footer">
-                         <p:commandButton value="Guardar" style="margin:20px"
-                                     action="index.jsf" ajax="false" />
+                         <p:commandButton value="Guardar" style="margin:20px" action="welcome-page.jsf" ajax="false" />
+                         <p:commandButton value="Consultar" style="margin:20px"/>
+                         <p:commandButton value="Modificar" style="margin:20px"/>
+                         <p:commandButton type="reset" value="Limpiar Datos"/>
                     </f:facet>
                    
                 </p:panelGrid>
