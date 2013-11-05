@@ -12,14 +12,14 @@
 /* *************** Estlilos personales *************** */
 
 .wrapper-content{
-    background: #ece3a5;
+    background: none;
     height: 600px;
     margin: auto;
     width: 90%;
 }
 
 #main-header{
-    background: url("../images/bg_top.jpg");
+    background: none;
     height: 120px;
     margin: 0;
     padding: 0;
@@ -67,4 +67,8 @@
     font-size: 25px;
     padding: 0.2em;
     text-decoration: none;
+}
+
+.output-empresa{
+    width: 10px;
 }

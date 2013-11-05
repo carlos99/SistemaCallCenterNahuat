@@ -3,139 +3,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
-
-        <title>Creación Empresa</title>
+        <title>Página para crear una nueva empresa.</title>
     </h:head>
-    <h:body>
-        <ui:composition template="../WEB-INF/templates/main-template.xhtml">	
-            <ui:define name="contents">				
-                <h:form id="manto-empresa">
-                    <div id="content-manto-empresa">
-                        <h:panelGrid id="display" class="empresa-table" columns="4" cellpadding="2" style="margin:0 auto;">
+<h:body>
+    <ui:composition template="../WEB-INF/templates/main-template.xhtml">
+        <ui:define name="contents">	
+            <h:form>
+                <p:panelGrid columns="6">
+                    <f:facet name="header">
+                        Creación Empresa
+                    </f:facet>
+                    
+                    <h:outputLabel for="idempresa" value="Id Empresa: *" />
+                    <p:inputText id="id-empresa" value="OM101" label="idempresa" disabled="true" />
+                    
+                    <h:outputLabel for="sitioweb" value="Sitio Web:" />
+                    <p:inputText id="sitioweb" value="" label="sitioweb" required="true"
+                                 requiredMessage="Ingresar Sitio Web."/>
+                    
+<!--                    <h:outputLabel for="telefono" value="Teléfono:"/>  
+                        <p:inputMask value="" label="telefono" mask="(999) 9999-9999" size="20" required="true"
+                                 requiredMessage="Ingresa un número de teléfono."
+                                 validatorMessage="Por favor ingresa un formato válido."/>-->
+                    
+<!--                    <h:outputLabel value="Teléfono:" />  
+                    <p:inputMask value="telefono" mask="(999) 999-9999" required="true"
+                                 requiredMessage="Ingresa un número de teléfono."/>  -->
+                     
+                    
+<!--                    <h:outputLabel value="Nombre: *"/>
+                    <p:inputText id="nombre" required="true" label="nombre" 
+                                 requiredMessage="Ingrese un nombre por favor."    
+                                 value="">
+                    </p:inputText>-->
+<!--                    <p:message for="nombre" />-->
+    
+                    <f:facet name="footer">
+                         <p:commandButton value="test" style="margin:20px"
+                                     action="index.jsf" ajax="false" />
+                    </f:facet>
+                   
+                </p:panelGrid>
+            </h:form>
+        </ui:define>
+    </ui:composition>
 
-                            <h:outputText styleClass="out-empresa" value="Id Empresa:" /> 
-                            <p:inputText styleClass="input-empresa" required="true" />
-
-                            <h:outputText value="Sitio Web" /> 
-                            <p:inputText styleClass="input-empresa" required="true"/>
-
-                            <h:outputText styleClass="out-em"  value="Teléfono:"/> 
-                            <p:inputText  styleClass="input-empresa in-emm" required="true"/>
-
-
-                            <!--                    <p:commandButton value="Ver Planilla" styleClass="btn-empresa" update="" 
-                                                                 oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">   
-                                                </p:commandButton>-->
-
-                            <h:outputLink id="link1" value="http://www.mycompany.com">
-                                <f:param name="projectId" value="123" />
-                                <f:param name="userId" value="45" />
-                                <!--                        <h:outputText value="Open Project" />-->
-                            </h:outputLink>
-
-                            <h:outputText styleClass="out-empresa" value="Nombre:" /> 
-                            <p:inputText styleClass="input-empresa" required="true"/>
-
-                            <h:outputText value="Dirección:" /> 
-                            <p:inputText styleClass="input-empresa" required="true"/>
-
-                            <h:outputText value="Configuración:"/>
-                            <p:selectOneMenu id="c-em" value="#{pprBean.city}">  
-                                <f:selectItem itemLabel="Publica" itemValue="" />  
-                                <f:selectItem itemLabel="Privada" itemValue="San Salvador" />  
-                                <f:selectItem itemLabel="ONG" itemValue="San Miguel" />  
-                            </p:selectOneMenu> 
-
-                            <br/>
-
-                            <h:outputText styleClass="out-empresa" value="Rubro:" /> 
-                            <p:inputText styleClass="input-empresa" required="true"/>
-
-                            <h:outputText value="Estado empresa:"/>
-                            <p:selectOneMenu id="e-em" value="#{pprBean.city}">  
-                                <f:selectItem itemLabel="Activo" itemValue="" />  
-                                <f:selectItem itemLabel="Inactivo" itemValue="San Salvador" />  
-                            </p:selectOneMenu>
-
-                            <!--                    <h:form>
-                                                    <p:commandButton value="Listar Bonos" id="btn-listarb" styleClass="btn-empresa" update="" 
-                                                                     oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View"></p:commandButton>
-                                                </h:form>-->
-
-                        </h:panelGrid> 
-                    </div>
-
-                    <br/>
-
-                    <h:form>
-                        <!--                <p:commandButton value="Guardar" styleClass="btn-downe" update="" 
-                                                         oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">                        
-                                        </p:commandButton>-->
-                        <h:commandButton styleClass="btn-guardar-all" value="Guardar" action="newpage"></h:commandButton>
-
-                        <p:commandButton value="Consultar" styleClass="btn-empresa" update="" 
-                                         oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">                        
-                        </p:commandButton>
-
-                        <p:commandButton value="Modificar" styleClass="btn-downe" update="" 
-                                         oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">                        
-                        </p:commandButton>
-
-                        <p:commandButton value="Limpiar Campos" styleClass="btn-downe" update="" 
-                                         oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">                        
-                        </p:commandButton>
-                    </h:form>
-
-                    <br/>
-                    <br/>
-
-                    <!--            ********** Inicio de DataTable **********-->
-
-                    <h:form>  
-                        <p:dataTable var="car" value="#{tableBean.carsSmall}">  
-                            <f:facet name="header">  
-                                Empresas 
-                            </f:facet>
-                            <p:column headerText="Id">  
-                                <h:outputText value="#{car.model}" />  
-                            </p:column>  
-
-                            <p:column headerText="Nombre">  
-                                <h:outputText value="#{car.year}" />  
-                            </p:column>  
-
-                            <p:column headerText="Dirección">  
-                                <h:outputText value="#{car.manufacturer}" />  
-                            </p:column>  
-
-                            <p:column headerText="Rubro">  
-                                <h:outputText value="#{car.color}" />  
-                            </p:column>  
-                            <p:column headerText="SItio Web">  
-                                <h:outputText value="#{car.color}" />  
-                            </p:column> 
-                            <p:column headerText="Configuración">  
-                                <h:outputText value="#{car.color}" />  
-                            </p:column> 
-                            <p:column headerText="Estado">  
-                                <h:outputText value="#{car.color}" />  
-                            </p:column> 
-                            <p:column headerText="Acción">  
-                                <h:form>
-                                    <p:commandButton value="Seleccionar" styleClass="btn-empresa" update="" 
-                                                     oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View">                        
-                                    </p:commandButton> 
-                                </h:form>
-                            </p:column> 
-                        </p:dataTable>  
-                    </h:form>  
-                </h:form>
-            </ui:define>
-        </ui:composition>
-
-    </h:body>
+</h:body>
 </html>
+
+
 

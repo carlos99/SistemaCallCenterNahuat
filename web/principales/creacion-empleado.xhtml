@@ -46,7 +46,12 @@
                 <p:inputText required="true"/>
 
                 <h:outputText value="Correo Electrónico:" />
-                <p:inputText required="true"/>
+                <p:inputText id="email" required="true" label="email" size="40"
+                             requiredMessage="Ingrese un correo electrónico."
+                             validatorMessage="Ingrese un formato de correo valido"
+                             value="">
+                    <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                </p:inputText>
 
                 <h:outputText value="Segundo APellido"/>
                 <p:inputText required="true"/>
