@@ -11,10 +11,10 @@
 <h:body>
     <ui:composition template="../WEB-INF/templates/main-template.xhtml">
         <ui:define name="contents">	
-            <h:form>
-                <p:panelGrid columns="6">
+            <h:form id="empresa-creacion">
+                <p:panelGrid id="empresa-grid" columns="6">
                     <f:facet name="header">
-                        Creación Empresa
+                        Creación Empresa.
                     </f:facet>
                     
                     <h:outputLabel for="idempresa" value="Id Empresa: *" />
@@ -52,7 +52,7 @@
                     </p:selectOneMenu>
 
                     <h:outputText value="Estado empresa:"/>
-                    <p:selectOneMenu id="e-em" value="#{pprBean.city}">  
+                    <p:selectOneMenu id="e-em" value="">  
                         <f:selectItem itemLabel="Activo" itemValue="" />  
                         <f:selectItem itemLabel="Inactivo" itemValue="San Salvador" />  
                     </p:selectOneMenu>
@@ -61,14 +61,15 @@
                          <p:commandButton value="Guardar" style="margin:20px" action="welcome-page.jsf" ajax="false" />
                          <p:commandButton value="Consultar" style="margin:20px"/>
                          <p:commandButton value="Modificar" style="margin:20px"/>
-                         <p:commandButton type="reset" value="Limpiar Datos"/>
+                         <p:commandButton value="Limpiar" update="empresa-grid" process="@this">  
+                            <p:resetInput target="empresa-grid" />  
+                        </p:commandButton>
                     </f:facet>
                    
                 </p:panelGrid>
             </h:form>
         </ui:define>
     </ui:composition>
-
 </h:body>
 </html>
 

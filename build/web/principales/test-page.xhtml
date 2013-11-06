@@ -12,102 +12,120 @@
                 <h:outputStylesheet library="mytheme" name="css/style.css" />
             </f:facet>
 
-            <h1>PrimeFaces email validator example</h1>
+            <h3>PrimeFaces email validator example</h3>
 
-            <div style="width: 90%">
-                <h:form>
-
-                    <p:inputText id="email" required="true" label="email" size="40"
-                                 requiredMessage="Please enter your email address."
-                                 validatorMessage="Invalid email format"
-                                 value="">
-                        <f:validateRegex
-                            pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-
-                    </p:inputText>
-                    <p:watermark for="email" value="Email Address *" />
-                    <p:message for="email" />
-
-                    <p:commandButton value="test" style="margin:20px"
-                                     action="index.jsf" ajax="false" />
-
-                </h:form>
-
-            
+            <div style="width: 90%; background: #ccc; height: 500px;">
 
             <h:form>
-                <p:panelGrid>
-
-                    <p:row>
-                        <p:column rowspan="3">AAA</p:column>
-                        <p:column colspan="4">BBB</p:column>
-                    </p:row>
-
-                    <p:row>
-                        <p:column colspan="2">CCC</p:column>
-                        <p:column colspan="2">DDD</p:column>
-                    </p:row>
-
-                    <p:row>
-                        <p:column>EEE</p:column>
-                        <p:column>FFF</p:column>
-                        <p:column>GGG</p:column>
-                        <p:column>HHH</p:column>
-                    </p:row>
-                </p:panelGrid>
-            </h:form>
-
-            <h:form>
-                <p:panelGrid style="margin-top:20px">  
+                <p:panelGrid id="empresa-grid" style="margin-top:20px">  
                     <f:facet name="header">  
                         <p:row>  
-                            <p:column colspan="7">1995-96 NBA Playoffs</p:column>  
+                            <p:column colspan="6">Creación Empresa</p:column>  
                         </p:row>  
-                        <p:row>  
-                            <p:column colspan="2">Conf. Semifinals</p:column>  
-                            <p:column colspan="2">Conf. Finals</p:column>  
-                            <p:column colspan="2">NBA Finals</p:column>  
-                            <p:column>Champion</p:column>  
-                        </p:row>  
-                    </f:facet>  
-
+                    </f:facet>                 
+                    
                     <p:row>  
-                        <p:column style="font-weight: bold;">Seattle</p:column>  
-                        <p:column style="font-weight: bold;">4</p:column>  
+                        <p:column style="font-weight: bold;">
+                            <h:outputLabel for="idempresa" value="Id Empresa: *" />
+                        </p:column>
+                        
+                        <p:column style="font-weight: bold;">
+                             <p:inputText id="id-empresa" value="OM101" label="idempresa" disabled="true" />
+                        </p:column>  
 
-                        <p:column rowspan="2" style="font-weight: bold;">Seattle</p:column>  
-                        <p:column rowspan="2" style="font-weight: bold;">4</p:column>  
+                        <p:column rowspan="1" style="font-weight: bold;">
+                            <h:outputLabel for="sitioweb" value="Sitio Web:" />
+                        </p:column>  
+                        <p:column rowspan="1" style="font-weight: bold;">
+                             <p:inputText id="sitioweb" value="" label="sitioweb" required="true"
+                                 requiredMessage="Ingresar Sitio Web."/>
+                        </p:column>  
 
-                        <p:column rowspan="5">Seattle</p:column>  
-                        <p:column rowspan="5">2</p:column>  
-
-                        <p:column rowspan="11" style="font-weight: bold;">Chicago</p:column>  
+                        <p:column rowspan="1">
+                            <h:outputText value="Teléfono: " /> 
+                        </p:column>  
+                        <p:column rowspan="1">
+                            <p:inputMask value="" mask="(999) 9999-9999" required="true"
+                                 requiredMessage="Ingrese un número de teléfono."/>
+                        </p:column>    
+                    </p:row>
+                    
+                    <p:row>  
+                        <p:column>
+                            <h:outputLabel for="nombre" value="Nombre: *" />
+                        </p:column>  
+                        <p:column >
+                             <p:inputText id="nombre" value="" label="nombre" required="true"
+                                 requiredMessage="Ingrese un nombre por favor."/>
+                        </p:column>  
+ 
+                        <p:column rowspan="1" style="font-weight: bold;">
+                            <h:outputText value="Dirección:" />
+                        </p:column>  
+                        <p:column rowspan="1" style="font-weight: bold;">
+                             <p:inputText required="true"
+                                 requiredMessage="Ingrese una Dirección."/>
+                        </p:column> 
+                        
+                        <p:column rowspan="1" style="font-weight: bold;">
+                            <h:outputText value="Configuración: *"/>
+                        </p:column>  
+                        <p:column rowspan="1" style="font-weight: bold;">
+                            <p:selectOneMenu id="configuracion-empresa" value="" required="true"
+                                 requiredMessage="Seleccione una Configuración.">  
+                                <f:selectItem itemLabel="Activo" itemValue="activo" />  
+                            <f:selectItem itemLabel="Inactivo" itemValue="inactivo" />  
+                            </p:selectOneMenu>
+                        </p:column> 
+ 
                     </p:row>  
-                    <p:row>  
-                        <p:column>Houston</p:column>  
-                        <p:column >0</p:column>  
-                    </p:row>  
+                    
+                    <p:row>
+                        <p:column>
+                            <h:outputText value="Rubro: *"/>
+                        </p:column>
+                        
+                        <p:column>
+                            <p:selectOneMenu id="rubro-empresa" value="" required="true"
+                                      requiredMessage="Seleccione un Rubro.">  
+                             <f:selectItem itemLabel="Publica" itemValue="publica" />  
+                             <f:selectItem itemLabel="Privada" itemValue="privada" />  
+                             <f:selectItem itemLabel="ONG" itemValue="ong" />  
+                            </p:selectOneMenu>
+                        </p:column>
+                        
+                        <p:column>
+                            <h:outputText value="Estado empresa:"/>
+                        </p:column>
+                        
+                        <p:column colspan="4">
+                            <p:selectOneMenu id="e-em" value="">  
+                            <f:selectItem itemLabel="Activo" itemValue="" />  
+                            <f:selectItem itemLabel="Inactivo" itemValue="San Salvador" />  
+                        </p:selectOneMenu>
+                        </p:column>
+                    </p:row>
 
-                    <p:row>  
+<!--                    <p:row>  
                         <p:column colspan="4" styleClass="ui-widget-header">  
                             <p:spacer height="0"/>  
                         </p:column>  
-                    </p:row>  
+                    </p:row>  -->
 
-                    <p:row>  
+<!--                    <p:row>  
                         <p:column style="font-weight: bold;">Utah</p:column>  
                         <p:column style="font-weight: bold;">4</p:column>  
 
                         <p:column rowspan="2">Utah</p:column>  
                         <p:column rowspan="2">3</p:column>  
-                    </p:row>  
+                    </p:row>  -->
 
-                    <p:row>  
+<!--                    <p:row>  
                         <p:column>San Antonio</p:column>  
                         <p:column >2</p:column>  
-                    </p:row>  
+                    </p:row>  -->
 
-                    <p:row>  
+<!--                    <p:row>  
                         <p:column colspan="6" styleClass="ui-widget-header">  
                             <p:spacer height="0"/>  
                         </p:column>  
@@ -127,9 +145,9 @@
                     <p:row>  
                         <p:column>New York</p:column>  
                         <p:column >1</p:column>  
-                    </p:row>  
+                    </p:row>  -->
 
-                    <p:row>  
+<!--                    <p:row>  
                         <p:column colspan="4" styleClass="ui-widget-header">  
                             <p:spacer height="0"/>  
                         </p:column>  
@@ -146,30 +164,25 @@
                     <p:row>  
                         <p:column style="font-weight: bold;">Orlando</p:column>  
                         <p:column style="font-weight: bold;">4</p:column>  
-                    </p:row>  
+                    </p:row>  -->
 
 
-                    <f:facet name="footer">  
-                        <p:row>  
-                            <p:column  colspan="4" style="text-align: right">  
-                                Finals MVP  
-                            </p:column>  
-                            <p:column  colspan="3" rowspan="3">  
-                                Michael Jordan (Chicago)  
-                            </p:column>  
-                        </p:row>  
+                    <f:facet name="footer">
+                        <p:row>
+                            <p:column colspan="3" style="font-weight: bold;">
+                                <p:commandButton value="Guardar"  action="welcome-page.jsf" ajax="false" />
+                                <p:commandButton value="Consultar" />
+                            </p:column>
+                            
+                            <p:column  colspan="3" style="font-weight: bold;">
+                                <p:commandButton value="Modificar" />
+                                <p:commandButton value="Limpiar" update="empresa-grid" process="@this">  
+                                    <p:resetInput target="empresa-grid" />  
+                                </p:commandButton>
+                            </p:column>
 
-                        <p:row>  
-                            <p:column  colspan="4" style="text-align: right">  
-                                Season MVP  
-                            </p:column>  
-                        </p:row>  
-                        <p:row>  
-                            <p:column  colspan="4" style="text-align: right">  
-                                Top Scorer  
-                            </p:column>  
-                        </p:row>  
-                    </f:facet>  
+                        </p:row>
+                    </f:facet> 
                 </p:panelGrid>
             </h:form>
         </div>

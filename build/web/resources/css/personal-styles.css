@@ -72,3 +72,11 @@
 .output-empresa{
     width: 10px;
 }
+
+#empresa-creacion{
+    margin: 5em auto;
+}
+
+.testclass{
+    height: 40px;
+}
