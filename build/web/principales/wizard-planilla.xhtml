@@ -18,6 +18,9 @@
                     <p:tab id="datosGenerales" title="#{myBundle.WizTab1Title}">  
                         <p:panel header="#{myBundle.WizTab1Panel}">  
                             <h:panelGrid columns="4" >  
+                                <h:outputText value="#{myBundle.WizTab1Empresa}" />  
+                                <p:inputText id="itEmpresa" value="" readonly="true" />
+
                                 <h:outputText value="#{myBundle.WizTab1IdPlanilla}" />  
                                 <p:inputText id="itIdPlanilla" value="" readonly="true" />  
 
@@ -38,7 +41,6 @@
                                     <f:selectItem itemLabel="periodo 1 [NOV]" itemValue="1" />  
                                     <f:selectItem itemLabel="periodo 2 [NOV]" itemValue="2" />  
                                 </p:selectOneMenu>  
-                                
 
                                 <h:outputText value="#{myBundle.wizTab1TotalPago}" />  
                                 <p:inputText id="itTotalPago" value="" readonly="true" /> 
@@ -48,19 +50,84 @@
                             </h:panelGrid> 
                             <p:watermark for="itIdPlanilla" value="auto - generado" /> 
                             <p:watermark for="itEstado" value="Creado" /> 
-                            <p:watermark for="itTotalPago" value="auto - generado" /> 
+                            <p:watermark for="itTotalPago" value="auto - generado" />
+                            <p:watermark for="itEmpresa" value="auto - generado" />
                         </p:panel>  
                     </p:tab>  
                     <p:tab id="datosMarcacion" title="#{myBundle.WizTab2Title}">  
+                        <p:outputLabel value="#{myBundle.WizTab2Empleado}"/>
+                        <p:inputText readonly="true" value="Nombre del empleado"/>
+
                         <p:panel header="#{myBundle.WizTab2Panel}">
+                            <h:panelGrid columns="4" cellspacing="5">
+                                <p:outputLabel value="#{myBundle.WizTab2Title2TIngreso}"/>
+                                <p:outputLabel value="#{myBundle.WizTab2Title2FRango}"/>
+                                <p:outputLabel value="#{myBundle.WizTab2Title2Minutos}"/>
+                                <p:outputLabel id="Accion" value="#{myBundle.WizTab2Title2Accion}"/>
+
+                                <p:outputLabel value="Horas Extra"/>
+                                <p:inputText id="Rango" value="" readonly="true"/>
+                                <p:inputText id="tMinutos" value="" readonly="true"/>
+                                <p:selectOneMenu>
+                                    <f:selectItem itemLabel="Seleccione uno" itemValue="" />  
+                                    <f:selectItem itemLabel="Aceptar y Pagar" itemValue="1" />  
+                                    <f:selectItem itemLabel="Aceptar y Compensatorio" itemValue="2" />
+                                    <f:selectItem itemLabel="Denegar" itemValue="2" />
+                                </p:selectOneMenu>
+
+                                <p:outputLabel value="Llegada Tarde"/>
+                                <p:inputText id="Rango1" value="" readonly="true"/>
+                                <p:inputText id="tMinutos1" value="" readonly="true"/>
+                                <p:selectOneMenu>
+                                    <f:selectItem itemLabel="Seleccione uno" itemValue="" />  
+                                    <f:selectItem itemLabel="Decontar" itemValue="1" />  
+                                    <f:selectItem itemLabel="Tiempo Compensatorio" itemValue="2" />
+                                    <f:selectItem itemLabel="Condonar" itemValue="2" />
+                                </p:selectOneMenu>
+                            </h:panelGrid>
+                            <p:watermark for="Rango" value="auto - generado" /> 
+                            <p:watermark for="tMinutos" value="auto - generado" />
+                            <p:watermark for="Rango1" value="auto - generado" /> 
+                            <p:watermark for="tMinutos1" value="auto - generado" />
+
+                            <p:button value="#{myBundle.WizTab2BtnGuardar}"/>
+                            <p:button value="#{myBundle.WizTab2BtnSalir}"/>
+                            <p:button value="#{myBundle.WizTab2BtnSaltar}" />
                         </p:panel>
                     </p:tab>
                     <p:tab id="descExtras" title="#{myBundle.WizTab3Title}">  
-                        <p:panel header="#{myBundle.WizTab3Panel}">
+                        <p:panel header="#{myBundle.WizTab3Panel1}">
+                            <h:panelGrid cellpadding="15" columns="2">
+                                <p:outputLabel value="#{myBundle.WizTab2Empleado}"/>
+                                <p:inputText readonly="true" value="Nombre del empleado"/>
+
+                                <p:outputLabel value="#{myBundle.WizTab3Descuento}"/>
+                                <p:selectOneMenu>
+                                    <f:selectItem itemLabel="Seleccione uno" itemValue="" />  
+                                    <f:selectItem itemLabel="Procuraduria" itemValue="1" />  
+                                    <f:selectItem itemLabel="Prestamo Bancario" itemValue="2" />
+                                    <f:selectItem itemLabel="Otros" itemValue="2" />
+                                </p:selectOneMenu>
+                            </h:panelGrid>
+                            <p:button value="#{myBundle.WizTab3BtnDescuento}"/>
                         </p:panel>
+                        <p:panel header="#{myBundle.WizTab3Panel2}">
+                            <p:dataTable paginator="true" rows="10" rowsPerPageTemplate="10,20,30">
+
+                            </p:dataTable>
+                            <p:button value="#{myBundle.WizTab2BtnGuardar}"/>
+                            <p:button value="#{myBundle.WizTab2BtnSalir}"/>
+                            <p:button value="#{myBundle.WizTab2BtnSaltar}" />
+                        </p:panel>                    
                     </p:tab>
                     <p:tab id="Confirmacion" title="#{myBundle.WizTab4Title}">  
                         <p:panel header="#{myBundle.WizTab4Panel}">
+                            <p:dataTable>
+                                
+                            </p:dataTable>
+                            <p:button value="#{myBundle.WizTab4BtnImprimir}"/>
+                            <p:button value="#{myBundle.WizTab4Guardar}"/>
+                            <p:button value="#{myBundle.WizTab2BtnSalir}" />
                         </p:panel>
                     </p:tab>
                 </p:wizard>
