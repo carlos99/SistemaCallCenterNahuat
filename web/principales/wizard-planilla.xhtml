@@ -11,9 +11,11 @@
     </ui:define>
 
     <ui:define name="body">
+
         <h:form id="CatalogoCargoViewForm">
 
             <p:panel  header="#{myBundle.WizPlanTitle}">
+                
                 <p:wizard flowListener="#{MbPlanillaController.onFlowProcess}"  nextLabel="#{myBundle.WizPlanNext}" backLabel="#{myBundle.WizPlanBack}" >  
                     <p:tab id="datosGenerales" title="#{myBundle.WizTab1Title}">  
                         <p:panel header="#{myBundle.WizTab1Panel}">  
