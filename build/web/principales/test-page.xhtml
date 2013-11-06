@@ -2,64 +2,178 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Bienvenido</title>
     </h:head>
-    <h:body>
-        <h:form>  
-            <p:panel header="Masks">  
-                <h:panelGrid columns="2" cellpadding="5">  
-                    <h:outputText value="Date: " />  
-                    <p:inputMask value="#{maskController.date}" mask="99/99/9999"/>  
+        <h:body>
+            <f:facet name="last">
+                <h:outputStylesheet library="mytheme" name="css/style.css" />
+            </f:facet>
 
-                    <h:outputText value="Phone: " />  
-                    <p:inputMask value="#{maskController.phone}" mask="(999) 999-9999"/>  
+            <h1>PrimeFaces email validator example</h1>
 
-                    <h:outputText value="Phone with Ext: " />  
-                    <p:inputMask value="#{maskController.phoneExt}"   
-                                 mask="(999) 999-9999? x99999"/>  
+            <div style="width: 90%">
+                <h:form>
 
-                    <h:outputText value="taxId: " />  
-                    <p:inputMask value="#{maskController.taxId}" mask="99-9999999"/>  
+                    <p:inputText id="email" required="true" label="email" size="40"
+                                 requiredMessage="Please enter your email address."
+                                 validatorMessage="Invalid email format"
+                                 value="">
+                        <f:validateRegex
+                            pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
 
-                    <h:outputText value="SSN: " />  
-                    <p:inputMask value="#{maskController.ssn}" mask="999-99-9999"/>  
+                    </p:inputText>
+                    <p:watermark for="email" value="Email Address *" />
+                    <p:message for="email" />
 
-                    <h:outputText value="Product Key: " />  
-                    <p:inputMask value="#{maskController.productKey}" mask="a*-999-a999"/>  
+                    <p:commandButton value="test" style="margin:20px"
+                                     action="index.jsf" ajax="false" />
 
-                    <p:commandButton value="Reset" type="reset" />  
-                    <p:commandButton value="Submit" update="display" oncomplete="PF('dlg').show()"/>  
+                </h:form>
 
-                </h:panelGrid>  
-            </p:panel>  
+            
 
-            <p:dialog widgetVar="dlg" modal="true">  
-                <h:panelGrid id="display" columns="2" cellpadding="5">  
+            <h:form>
+                <p:panelGrid>
 
-                    <h:outputText value="Date: " />  
-                    <h:outputText value="#{maskController.date}" />  
+                    <p:row>
+                        <p:column rowspan="3">AAA</p:column>
+                        <p:column colspan="4">BBB</p:column>
+                    </p:row>
 
-                    <h:outputText value="Phone: " />  
-                    <h:outputText value="#{maskController.phone}" />  
+                    <p:row>
+                        <p:column colspan="2">CCC</p:column>
+                        <p:column colspan="2">DDD</p:column>
+                    </p:row>
 
-                    <h:outputText value="Phone with Ext: " />  
-                    <h:outputText value="#{maskController.phoneExt}"/>  
+                    <p:row>
+                        <p:column>EEE</p:column>
+                        <p:column>FFF</p:column>
+                        <p:column>GGG</p:column>
+                        <p:column>HHH</p:column>
+                    </p:row>
+                </p:panelGrid>
+            </h:form>
 
-                    <h:outputText value="taxId: " />  
-                    <h:outputText value="#{maskController.taxId}" />  
+            <h:form>
+                <p:panelGrid style="margin-top:20px">  
+                    <f:facet name="header">  
+                        <p:row>  
+                            <p:column colspan="7">1995-96 NBA Playoffs</p:column>  
+                        </p:row>  
+                        <p:row>  
+                            <p:column colspan="2">Conf. Semifinals</p:column>  
+                            <p:column colspan="2">Conf. Finals</p:column>  
+                            <p:column colspan="2">NBA Finals</p:column>  
+                            <p:column>Champion</p:column>  
+                        </p:row>  
+                    </f:facet>  
 
-                    <h:outputText value="SSN: " />  
-                    <h:outputText value="#{maskController.ssn}" />  
+                    <p:row>  
+                        <p:column style="font-weight: bold;">Seattle</p:column>  
+                        <p:column style="font-weight: bold;">4</p:column>  
 
-                    <h:outputText value="Product Key: " />  
-                    <h:outputText value="#{maskController.productKey}" />  
+                        <p:column rowspan="2" style="font-weight: bold;">Seattle</p:column>  
+                        <p:column rowspan="2" style="font-weight: bold;">4</p:column>  
 
-                </h:panelGrid>  
-            </p:dialog>  
+                        <p:column rowspan="5">Seattle</p:column>  
+                        <p:column rowspan="5">2</p:column>  
 
-        </h:form>
+                        <p:column rowspan="11" style="font-weight: bold;">Chicago</p:column>  
+                    </p:row>  
+                    <p:row>  
+                        <p:column>Houston</p:column>  
+                        <p:column >0</p:column>  
+                    </p:row>  
+
+                    <p:row>  
+                        <p:column colspan="4" styleClass="ui-widget-header">  
+                            <p:spacer height="0"/>  
+                        </p:column>  
+                    </p:row>  
+
+                    <p:row>  
+                        <p:column style="font-weight: bold;">Utah</p:column>  
+                        <p:column style="font-weight: bold;">4</p:column>  
+
+                        <p:column rowspan="2">Utah</p:column>  
+                        <p:column rowspan="2">3</p:column>  
+                    </p:row>  
+
+                    <p:row>  
+                        <p:column>San Antonio</p:column>  
+                        <p:column >2</p:column>  
+                    </p:row>  
+
+                    <p:row>  
+                        <p:column colspan="6" styleClass="ui-widget-header">  
+                            <p:spacer height="0"/>  
+                        </p:column>  
+                    </p:row>  
+
+                    <p:row>  
+                        <p:column style="font-weight: bold;">Chicago</p:column>  
+                        <p:column style="font-weight: bold;">4</p:column>  
+
+                        <p:column rowspan="2" style="font-weight: bold;">Chicago</p:column>  
+                        <p:column rowspan="2" style="font-weight: bold;">4</p:column>  
+
+                        <p:column rowspan="5" style="font-weight: bold;">Chicago</p:column>  
+                        <p:column rowspan="5" style="font-weight: bold;">4</p:column>  
+                    </p:row>  
+
+                    <p:row>  
+                        <p:column>New York</p:column>  
+                        <p:column >1</p:column>  
+                    </p:row>  
+
+                    <p:row>  
+                        <p:column colspan="4" styleClass="ui-widget-header">  
+                            <p:spacer height="0"/>  
+                        </p:column>  
+                    </p:row>  
+
+                    <p:row>  
+                        <p:column>Atlanta</p:column>  
+                        <p:column >1</p:column>  
+
+                        <p:column rowspan="2">Orlando</p:column>  
+                        <p:column rowspan="2">0</p:column>  
+                    </p:row>  
+
+                    <p:row>  
+                        <p:column style="font-weight: bold;">Orlando</p:column>  
+                        <p:column style="font-weight: bold;">4</p:column>  
+                    </p:row>  
+
+
+                    <f:facet name="footer">  
+                        <p:row>  
+                            <p:column  colspan="4" style="text-align: right">  
+                                Finals MVP  
+                            </p:column>  
+                            <p:column  colspan="3" rowspan="3">  
+                                Michael Jordan (Chicago)  
+                            </p:column>  
+                        </p:row>  
+
+                        <p:row>  
+                            <p:column  colspan="4" style="text-align: right">  
+                                Season MVP  
+                            </p:column>  
+                        </p:row>  
+                        <p:row>  
+                            <p:column  colspan="4" style="text-align: right">  
+                                Top Scorer  
+                            </p:column>  
+                        </p:row>  
+                    </f:facet>  
+                </p:panelGrid>
+            </h:form>
+        </div>
     </h:body>
+
 </html>
 

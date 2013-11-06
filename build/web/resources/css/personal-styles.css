@@ -19,7 +19,7 @@
 }
 
 #main-header{
-    background: none;
+    background: url("../images/bg_top.jpg");
     height: 120px;
     margin: 0;
     padding: 0;
