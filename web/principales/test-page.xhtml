@@ -8,184 +8,43 @@
         <title>Bienvenido</title>
     </h:head>
         <h:body>
-            <f:facet name="last">
-                <h:outputStylesheet library="mytheme" name="css/style.css" />
-            </f:facet>
-
-            <h3>PrimeFaces email validator example</h3>
-
-            <div style="width: 90%; background: #ccc; height: 500px;">
-
-            <h:form>
-                <p:panelGrid id="empresa-grid" style="margin-top:20px">  
-                    <f:facet name="header">  
-                        <p:row>  
-                            <p:column colspan="6">Creación Empresa</p:column>  
-                        </p:row>  
-                    </f:facet>                 
-                    
-                    <p:row>  
-                        <p:column style="font-weight: bold;">
-                            <h:outputLabel for="idempresa" value="Id Empresa: *" />
-                        </p:column>
-                        
-                        <p:column style="font-weight: bold;">
-                             <p:inputText id="id-empresa" value="OM101" label="idempresa" disabled="true" />
-                        </p:column>  
-
-                        <p:column rowspan="1" style="font-weight: bold;">
-                            <h:outputLabel for="sitioweb" value="Sitio Web:" />
-                        </p:column>  
-                        <p:column rowspan="1" style="font-weight: bold;">
-                             <p:inputText id="sitioweb" value="" label="sitioweb" required="true"
-                                 requiredMessage="Ingresar Sitio Web."/>
-                        </p:column>  
-
-                        <p:column rowspan="1">
-                            <h:outputText value="Teléfono: " /> 
-                        </p:column>  
-                        <p:column rowspan="1">
-                            <p:inputMask value="" mask="(999) 9999-9999" required="true"
-                                 requiredMessage="Ingrese un número de teléfono."/>
-                        </p:column>    
-                    </p:row>
-                    
-                    <p:row>  
-                        <p:column>
-                            <h:outputLabel for="nombre" value="Nombre: *" />
-                        </p:column>  
-                        <p:column >
-                             <p:inputText id="nombre" value="" label="nombre" required="true"
-                                 requiredMessage="Ingrese un nombre por favor."/>
-                        </p:column>  
- 
-                        <p:column rowspan="1" style="font-weight: bold;">
-                            <h:outputText value="Dirección:" />
-                        </p:column>  
-                        <p:column rowspan="1" style="font-weight: bold;">
-                             <p:inputText required="true"
-                                 requiredMessage="Ingrese una Dirección."/>
-                        </p:column> 
-                        
-                        <p:column rowspan="1" style="font-weight: bold;">
-                            <h:outputText value="Configuración: *"/>
-                        </p:column>  
-                        <p:column rowspan="1" style="font-weight: bold;">
-                            <p:selectOneMenu id="configuracion-empresa" value="" required="true"
-                                 requiredMessage="Seleccione una Configuración.">  
-                                <f:selectItem itemLabel="Activo" itemValue="activo" />  
-                            <f:selectItem itemLabel="Inactivo" itemValue="inactivo" />  
-                            </p:selectOneMenu>
-                        </p:column> 
- 
-                    </p:row>  
-                    
-                    <p:row>
-                        <p:column>
-                            <h:outputText value="Rubro: *"/>
-                        </p:column>
-                        
-                        <p:column>
-                            <p:selectOneMenu id="rubro-empresa" value="" required="true"
-                                      requiredMessage="Seleccione un Rubro.">  
-                             <f:selectItem itemLabel="Publica" itemValue="publica" />  
-                             <f:selectItem itemLabel="Privada" itemValue="privada" />  
-                             <f:selectItem itemLabel="ONG" itemValue="ong" />  
-                            </p:selectOneMenu>
-                        </p:column>
-                        
-                        <p:column>
-                            <h:outputText value="Estado empresa:"/>
-                        </p:column>
-                        
-                        <p:column colspan="4">
-                            <p:selectOneMenu id="e-em" value="">  
-                            <f:selectItem itemLabel="Activo" itemValue="" />  
-                            <f:selectItem itemLabel="Inactivo" itemValue="San Salvador" />  
-                        </p:selectOneMenu>
-                        </p:column>
-                    </p:row>
-
-<!--                    <p:row>  
-                        <p:column colspan="4" styleClass="ui-widget-header">  
-                            <p:spacer height="0"/>  
-                        </p:column>  
-                    </p:row>  -->
-
-<!--                    <p:row>  
-                        <p:column style="font-weight: bold;">Utah</p:column>  
-                        <p:column style="font-weight: bold;">4</p:column>  
-
-                        <p:column rowspan="2">Utah</p:column>  
-                        <p:column rowspan="2">3</p:column>  
-                    </p:row>  -->
-
-<!--                    <p:row>  
-                        <p:column>San Antonio</p:column>  
-                        <p:column >2</p:column>  
-                    </p:row>  -->
-
-<!--                    <p:row>  
-                        <p:column colspan="6" styleClass="ui-widget-header">  
-                            <p:spacer height="0"/>  
-                        </p:column>  
-                    </p:row>  
-
-                    <p:row>  
-                        <p:column style="font-weight: bold;">Chicago</p:column>  
-                        <p:column style="font-weight: bold;">4</p:column>  
-
-                        <p:column rowspan="2" style="font-weight: bold;">Chicago</p:column>  
-                        <p:column rowspan="2" style="font-weight: bold;">4</p:column>  
-
-                        <p:column rowspan="5" style="font-weight: bold;">Chicago</p:column>  
-                        <p:column rowspan="5" style="font-weight: bold;">4</p:column>  
-                    </p:row>  
-
-                    <p:row>  
-                        <p:column>New York</p:column>  
-                        <p:column >1</p:column>  
-                    </p:row>  -->
-
-<!--                    <p:row>  
-                        <p:column colspan="4" styleClass="ui-widget-header">  
-                            <p:spacer height="0"/>  
-                        </p:column>  
-                    </p:row>  
-
-                    <p:row>  
-                        <p:column>Atlanta</p:column>  
-                        <p:column >1</p:column>  
-
-                        <p:column rowspan="2">Orlando</p:column>  
-                        <p:column rowspan="2">0</p:column>  
-                    </p:row>  
-
-                    <p:row>  
-                        <p:column style="font-weight: bold;">Orlando</p:column>  
-                        <p:column style="font-weight: bold;">4</p:column>  
-                    </p:row>  -->
-
-
-                    <f:facet name="footer">
-                        <p:row>
-                            <p:column colspan="3" style="font-weight: bold;">
-                                <p:commandButton value="Guardar"  action="welcome-page.jsf" ajax="false" />
-                                <p:commandButton value="Consultar" />
-                            </p:column>
-                            
-                            <p:column  colspan="3" style="font-weight: bold;">
-                                <p:commandButton value="Modificar" />
-                                <p:commandButton value="Limpiar" update="empresa-grid" process="@this">  
-                                    <p:resetInput target="empresa-grid" />  
-                                </p:commandButton>
-                            </p:column>
-
-                        </p:row>
-                    </f:facet> 
-                </p:panelGrid>
-            </h:form>
-        </div>
+           <h:form>  
+  
+    <p:dataTable id="dataTable" var="car" value="#{tableBean.carsSmall}" widgetVar="carsTable"   
+            emptyMessage="No cars found with given criteria" filteredValue="#{tableBean.filteredCars}">  
+  
+         <f:facet name="header">  
+            <p:outputPanel>  
+                <h:outputText value="Search all fields:" />  
+                <p:inputText id="globalFilter" style="width:150px" />  
+            </p:outputPanel>  
+        </f:facet>  
+  
+        <p:column id="modelColumn" filterBy="model"   
+                headerText="Model" footerText="contains"  
+                filterMatchMode="contains">  
+            <h:outputText value="#{car.model}" />  
+        </p:column>  
+  
+        <p:column id="yearColumn" filterBy="year"  
+                headerText="Year" footerText="startsWith">  
+            <h:outputText value="#{car.year}" />  
+        </p:column>  
+  
+        <p:column id="manufacturerColumn" filterBy="manufacturer"   
+                headerText="Manufacturer" footerText="exact"  
+                filterOptions="#{tableBean.manufacturerOptions}"  
+                filterMatchMode="exact">  
+            <h:outputText value="#{car.manufacturer}" />  
+        </p:column>  
+  
+        <p:column id="colorColumn" filterBy="color"  
+                headerText="Color" footerText="endsWith" filterMatchMode="endsWith">  
+            <h:outputText value="#{car.color}" />  
+        </p:column>  
+    </p:dataTable>  
+      
+</h:form>  
     </h:body>
 
 </html>

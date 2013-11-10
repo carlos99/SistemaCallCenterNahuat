@@ -39,4 +39,7 @@
         <managed-bean-class>com.isw2.nahuat.backing.MbPlanillaController</managed-bean-class>
         <managed-bean-scope>view</managed-bean-scope>
     </managed-bean>
+    <application>
+        <message-bundle>error-messages</message-bundle>
+    </application>
 </faces-config>

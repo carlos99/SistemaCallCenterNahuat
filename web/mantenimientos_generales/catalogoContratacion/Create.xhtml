@@ -15,8 +15,11 @@
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{catalogoContratacionController.selected != null}">
 
-                        <p:outputLabel value="#{myBundle.CreateCatalogoContratacionLabel_idCatalogoContratacion}" for="idCatalogoContratacion" />
-                        <p:inputText id="idCatalogoContratacion" value="#{catalogoContratacionController.selected.idCatalogoContratacion}" title="#{myBundle.CreateCatalogoContratacionTitle_idCatalogoContratacion}" required="true" requiredMessage="#{myBundle.CreateCatalogoContratacionRequiredMessage_idCatalogoContratacion}"/>
+                        <p:outputLabel value="#{myBundle.CreateCatalogoContratacionLabel_idCatalogoContratacion}" 
+                                       for="idCatalogoContratacion" />
+                        <p:inputText id="idCatalogoContratacion" value="#{catalogoContratacionController.selected.idCatalogoContratacion}" 
+                                     title="#{myBundle.CreateCatalogoContratacionTitle_idCatalogoContratacion}" required="true" 
+                                     requiredMessage="#{myBundle.CreateCatalogoContratacionRequiredMessage_idCatalogoContratacion}"/>
 
                         <p:outputLabel value="#{myBundle.CreateCatalogoContratacionLabel_nombre}" for="nombre" />
                         <p:inputText id="nombre" value="#{catalogoContratacionController.selected.nombre}" title="#{myBundle.CreateCatalogoContratacionTitle_nombre}" required="true" requiredMessage="#{myBundle.CreateCatalogoContratacionRequiredMessage_nombre}"/>

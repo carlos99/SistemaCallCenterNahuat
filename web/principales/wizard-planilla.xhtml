@@ -15,7 +15,7 @@
         <h:form id="CatalogoCargoViewForm">
 
             <p:panel  header="#{myBundle.WizPlanTitle}">
-                
+
                 <p:wizard flowListener="#{MbPlanillaController.onFlowProcess}"  nextLabel="#{myBundle.WizPlanNext}" backLabel="#{myBundle.WizPlanBack}" >  
                     <p:tab id="datosGenerales" title="#{myBundle.WizTab1Title}">  
                         <p:panel header="#{myBundle.WizTab1Panel}">  
@@ -124,9 +124,22 @@
                     </p:tab>
                     <p:tab id="Confirmacion" title="#{myBundle.WizTab4Title}">  
                         <p:panel header="#{myBundle.WizTab4Panel}">
-                            <p:dataTable>
+                                <p:dataTable id="dataTable" var="car" value="#{tableBean.carsSmall}" widgetVar="carsTable"   
+                                             emptyMessage="No cars found with given criteria" filteredValue="#{tableBean.filteredCars}">  
+
+                                    <f:facet name="header">  
+                                        <p:outputPanel>  
+                                            <h:outputText value="Search all fields:" />  
+                                            <p:inputText id="globalFilter" onkeyup="carsTable.filter()" style="width:150px" />  
+                                        </p:outputPanel>  
+                                    </f:facet>  
+
+                                 
+                                </p:dataTable>  
+
+                            <!-- <p:dataTable>
                                 
-                            </p:dataTable>
+                            </p:dataTable>-->
                             <p:button value="#{myBundle.WizTab4BtnImprimir}"/>
                             <p:button value="#{myBundle.WizTab4Guardar}"/>
                             <p:button value="#{myBundle.WizTab2BtnSalir}" />
