@@ -8,17 +8,17 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2013-11-09T21:51:13")
+@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2013-11-10T09:04:43")
 @StaticMetamodel(EmpleadoExperiencia.class)
 public class EmpleadoExperiencia_ { 
 
     public static volatile SingularAttribute<EmpleadoExperiencia, BigInteger> salario;
     public static volatile SingularAttribute<EmpleadoExperiencia, Empleado> idEmpleado;
+    public static volatile SingularAttribute<EmpleadoExperiencia, String> idEmpleadoExperiencia;
     public static volatile SingularAttribute<EmpleadoExperiencia, String> empresa;
     public static volatile SingularAttribute<EmpleadoExperiencia, Date> fechaFin;
     public static volatile SingularAttribute<EmpleadoExperiencia, String> descripcionExperiencia;
     public static volatile SingularAttribute<EmpleadoExperiencia, CatalogoCargo> idCatalogoCargo;
-    public static volatile SingularAttribute<EmpleadoExperiencia, String> idEmpeladoExperiencia;
     public static volatile SingularAttribute<EmpleadoExperiencia, Date> fechaInicio;
 
 }

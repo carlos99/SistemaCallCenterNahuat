@@ -1,7 +1,7 @@
 package com.isw2.nahuat.converter;
 
 import com.isw2.nahuat.model.CatalogoHorario;
-import com.isw2.nahuat.bean.CatalogoHorarioFacade;
+import com.isw2.nahuat.session.CatalogoHorarioFacade;
 import com.isw2.nahuat.backing.util.JsfUtil;
 import java.util.logging.Level;
 import java.util.logging.Logger;

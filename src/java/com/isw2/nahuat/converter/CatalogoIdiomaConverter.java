@@ -1,7 +1,7 @@
 package com.isw2.nahuat.converter;
 
 import com.isw2.nahuat.model.CatalogoIdioma;
-import com.isw2.nahuat.bean.CatalogoIdiomaFacade;
+import com.isw2.nahuat.session.CatalogoIdiomaFacade;
 import com.isw2.nahuat.backing.util.JsfUtil;
 import java.util.logging.Level;
 import java.util.logging.Logger;

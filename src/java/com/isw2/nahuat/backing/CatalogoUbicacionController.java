@@ -1,7 +1,7 @@
 package com.isw2.nahuat.backing;
 
 import com.isw2.nahuat.model.CatalogoUbicacion;
-import com.isw2.nahuat.bean.CatalogoUbicacionFacade;
+import com.isw2.nahuat.session.CatalogoUbicacionFacade;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;

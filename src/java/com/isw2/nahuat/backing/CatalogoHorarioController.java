@@ -1,7 +1,7 @@
 package com.isw2.nahuat.backing;
 
 import com.isw2.nahuat.model.CatalogoHorario;
-import com.isw2.nahuat.bean.CatalogoHorarioFacade;
+import com.isw2.nahuat.session.CatalogoHorarioFacade;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;

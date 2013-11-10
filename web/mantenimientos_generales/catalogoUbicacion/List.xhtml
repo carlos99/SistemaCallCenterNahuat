@@ -12,7 +12,7 @@
 
             <p:dataTable id="datalist" value="#{catalogoUbicacionController.items}" var="item"
                          selectionMode="single" selection="#{catalogoUbicacionController.selected}"
-                         rowKey="#{item.idCategoriaUbicacion}"
+                         rowKey="#{item.idCatalogoUbicacion}"
                          paginator="true"
                          rows="10"
                          rowsPerPageTemplate="10,20,30"
@@ -21,11 +21,11 @@
                 <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                 <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                <p:column sortBy="#{item.idCategoriaUbicacion}" filterBy="#{item.idCategoriaUbicacion}">
+                <p:column sortBy="#{item.idCatalogoUbicacion}" filterBy="#{item.idCatalogoUbicacion}">
                     <f:facet name="header">
-                        <h:outputText value="#{myBundle.ListCatalogoUbicacionTitle_idCategoriaUbicacion}"/>
+                        <h:outputText value="#{myBundle.ListCatalogoUbicacionTitle_idCatalogoUbicacion}"/>
                     </f:facet>
-                    <h:outputText value="#{item.idCategoriaUbicacion}"/>
+                    <h:outputText value="#{item.idCatalogoUbicacion}"/>
                 </p:column>
                 <p:column sortBy="#{item.nivelEdificio}" filterBy="#{item.nivelEdificio}">
                     <f:facet name="header">

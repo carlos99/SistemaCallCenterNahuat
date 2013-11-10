@@ -1,7 +1,7 @@
 package com.isw2.nahuat.backing;
 
 import com.isw2.nahuat.model.CatalogoEstado;
-import com.isw2.nahuat.bean.CatalogoEstadoFacade;
+import com.isw2.nahuat.session.CatalogoEstadoFacade;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;

@@ -1,7 +1,7 @@
 package com.isw2.nahuat.backing;
 
 import com.isw2.nahuat.model.CatalogoDextra;
-import com.isw2.nahuat.bean.CatalogoDextraFacade;
+import com.isw2.nahuat.session.CatalogoDextraFacade;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;

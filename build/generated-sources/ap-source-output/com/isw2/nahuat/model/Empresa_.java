@@ -2,7 +2,6 @@ package com.isw2.nahuat.model;
 
 import com.isw2.nahuat.model.AdelantoSalario;
 import com.isw2.nahuat.model.CatalogoEstado;
-import com.isw2.nahuat.model.CatalogoMunicipio;
 import com.isw2.nahuat.model.CatalogoRubro;
 import com.isw2.nahuat.model.Contratacion;
 import com.isw2.nahuat.model.EmpresaConfiguracion;
@@ -16,7 +15,7 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2013-11-09T21:51:13")
+@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2013-11-10T09:04:43")
 @StaticMetamodel(Empresa.class)
 public class Empresa_ { 
 
@@ -33,7 +32,7 @@ public class Empresa_ {
     public static volatile ListAttribute<Empresa, AdelantoSalario> adelantoSalarioList;
     public static volatile SingularAttribute<Empresa, String> nombre;
     public static volatile ListAttribute<Empresa, EmpresaDepartamento> empresaDepartamentoList;
-    public static volatile SingularAttribute<Empresa, CatalogoMunicipio> idCatalogoMunicipio;
+    public static volatile SingularAttribute<Empresa, String> idCatalogoMunicipio;
     public static volatile SingularAttribute<Empresa, String> idEmpresa;
     public static volatile ListAttribute<Empresa, Marcacion> marcacionList;
     public static volatile ListAttribute<Empresa, MarcacionDextra> marcacionDextraList;

@@ -15,8 +15,8 @@
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{catalogoUbicacionController.selected != null}">
 
-                        <p:outputLabel value="#{myBundle.CreateCatalogoUbicacionLabel_idCategoriaUbicacion}" for="idCategoriaUbicacion" />
-                        <p:inputText id="idCategoriaUbicacion" value="#{catalogoUbicacionController.selected.idCategoriaUbicacion}" title="#{myBundle.CreateCatalogoUbicacionTitle_idCategoriaUbicacion}" required="true" requiredMessage="#{myBundle.CreateCatalogoUbicacionRequiredMessage_idCategoriaUbicacion}"/>
+                        <p:outputLabel value="#{myBundle.CreateCatalogoUbicacionLabel_idCatalogoUbicacion}" for="idCatalogoUbicacion" />
+                        <p:inputText id="idCatalogoUbicacion" value="#{catalogoUbicacionController.selected.idCatalogoUbicacion}" title="#{myBundle.CreateCatalogoUbicacionTitle_idCatalogoUbicacion}" required="true" requiredMessage="#{myBundle.CreateCatalogoUbicacionRequiredMessage_idCatalogoUbicacion}"/>
 
                         <p:outputLabel value="#{myBundle.CreateCatalogoUbicacionLabel_nivelEdificio}" for="nivelEdificio" />
                         <p:inputText id="nivelEdificio" value="#{catalogoUbicacionController.selected.nivelEdificio}" title="#{myBundle.CreateCatalogoUbicacionTitle_nivelEdificio}" required="true" requiredMessage="#{myBundle.CreateCatalogoUbicacionRequiredMessage_nivelEdificio}"/>

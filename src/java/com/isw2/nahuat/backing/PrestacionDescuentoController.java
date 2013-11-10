@@ -1,7 +1,7 @@
 package com.isw2.nahuat.backing;
 
 import com.isw2.nahuat.model.PrestacionDescuento;
-import com.isw2.nahuat.bean.PrestacionDescuentoFacade;
+import com.isw2.nahuat.session.PrestacionDescuentoFacade;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;

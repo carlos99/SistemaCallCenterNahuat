@@ -22,15 +22,7 @@
                         <p:inputText id="nombre" value="#{catalogoMunicipioController.selected.nombre}" title="#{myBundle.CreateCatalogoMunicipioTitle_nombre}" required="true" requiredMessage="#{myBundle.CreateCatalogoMunicipioRequiredMessage_nombre}"/>
 
                         <p:outputLabel value="#{myBundle.CreateCatalogoMunicipioLabel_idCatalogoDepartamento}" for="idCatalogoDepartamento" />
-                        <p:selectOneMenu id="idCatalogoDepartamento" value="#{catalogoMunicipioController.selected.idCatalogoDepartamento}" required="true" requiredMessage="#{myBundle.EditCatalogoMunicipioRequiredMessage_idCatalogoDepartamento}" converter="catalogoDepartamentoConverter">
-                            <f:selectItem itemLabel="#{myBundle.SelectOneMessage}"/>
-                            <f:selectItems value="#{catalogoDepartamentoController.items}"
-                                           var="idCatalogoDepartamentoItem"
-                                           itemValue="#{idCatalogoDepartamentoItem}"
-                                           itemLabel="#{idCatalogoDepartamentoItem.idCatalogoDepartamento.toString()}"
-                                           />
-
-                        </p:selectOneMenu>
+                        <p:inputText id="idCatalogoDepartamento" value="#{catalogoMunicipioController.selected.idCatalogoDepartamento}" title="#{myBundle.CreateCatalogoMunicipioTitle_idCatalogoDepartamento}" required="true" requiredMessage="#{myBundle.CreateCatalogoMunicipioRequiredMessage_idCatalogoDepartamento}"/>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{catalogoMunicipioController.saveNew}" value="#{myBundle.Save}" update="display,:CatalogoMunicipioListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,CatalogoMunicipioCreateDialog);"/>
                     <p:commandButton value="#{myBundle.Cancel}" onclick="CatalogoMunicipioCreateDialog.hide()"/>

@@ -1,7 +1,7 @@
 package com.isw2.nahuat.backing;
 
 import com.isw2.nahuat.model.CatalogoCargo;
-import com.isw2.nahuat.bean.CatalogoCargoFacade;
+import com.isw2.nahuat.session.CatalogoCargoFacade;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;

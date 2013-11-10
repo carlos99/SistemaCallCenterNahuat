@@ -1,7 +1,7 @@
 package com.isw2.nahuat.backing;
 
 import com.isw2.nahuat.model.CatalogoRubro;
-import com.isw2.nahuat.bean.CatalogoRubroFacade;
+import com.isw2.nahuat.session.CatalogoRubroFacade;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;

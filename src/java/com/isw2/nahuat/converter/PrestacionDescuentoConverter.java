@@ -1,7 +1,7 @@
 package com.isw2.nahuat.converter;
 
 import com.isw2.nahuat.model.PrestacionDescuento;
-import com.isw2.nahuat.bean.PrestacionDescuentoFacade;
+import com.isw2.nahuat.session.PrestacionDescuentoFacade;
 import com.isw2.nahuat.backing.util.JsfUtil;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,13 +25,13 @@ public class PrestacionDescuentoConverter implements Converter {
         return this.ejbFacade.find(getKey(value));
     }
 
-    java.lang.Character getKey(String value) {
-        java.lang.Character key;
-        key = new Character(value.charAt(0));
+    java.lang.String getKey(String value) {
+        java.lang.String key;
+        key = value;
         return key;
     }
 
-    String getStringKey(java.lang.Character value) {
+    String getStringKey(java.lang.String value) {
         StringBuffer sb = new StringBuffer();
         sb.append(value);
         return sb.toString();

@@ -1,7 +1,7 @@
 package com.isw2.nahuat.converter;
 
 import com.isw2.nahuat.model.CatalogoEdepartamento;
-import com.isw2.nahuat.bean.CatalogoEdepartamentoFacade;
+import com.isw2.nahuat.session.CatalogoEdepartamentoFacade;
 import com.isw2.nahuat.backing.util.JsfUtil;
 import java.util.logging.Level;
 import java.util.logging.Logger;

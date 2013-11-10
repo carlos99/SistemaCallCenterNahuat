@@ -1,6 +1,6 @@
 package com.isw2.nahuat.backing;
 
-import com.isw2.nahuat.bean.AbstractFacade;
+import com.isw2.nahuat.session.AbstractFacade;
 import com.isw2.nahuat.backing.util.JsfUtil;
 import java.util.List;
 import java.util.logging.Level;

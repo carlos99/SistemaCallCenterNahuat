@@ -1,7 +1,7 @@
 package com.isw2.nahuat.backing;
 
 import com.isw2.nahuat.model.CatalogoIdioma;
-import com.isw2.nahuat.bean.CatalogoIdiomaFacade;
+import com.isw2.nahuat.session.CatalogoIdiomaFacade;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;

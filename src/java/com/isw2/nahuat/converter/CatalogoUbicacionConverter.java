@@ -1,7 +1,7 @@
 package com.isw2.nahuat.converter;
 
 import com.isw2.nahuat.model.CatalogoUbicacion;
-import com.isw2.nahuat.bean.CatalogoUbicacionFacade;
+import com.isw2.nahuat.session.CatalogoUbicacionFacade;
 import com.isw2.nahuat.backing.util.JsfUtil;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -45,7 +45,7 @@ public class CatalogoUbicacionConverter implements Converter {
         }
         if (object instanceof CatalogoUbicacion) {
             CatalogoUbicacion o = (CatalogoUbicacion) object;
-            return getStringKey(o.getIdCategoriaUbicacion());
+            return getStringKey(o.getIdCatalogoUbicacion());
         } else {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "object {0} is of type {1}; expected type: {2}", new Object[]{object, object.getClass().getName(), CatalogoUbicacion.class.getName()});
             return null;

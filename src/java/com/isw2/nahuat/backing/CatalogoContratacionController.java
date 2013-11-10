@@ -1,7 +1,7 @@
 package com.isw2.nahuat.backing;
 
 import com.isw2.nahuat.model.CatalogoContratacion;
-import com.isw2.nahuat.bean.CatalogoContratacionFacade;
+import com.isw2.nahuat.session.CatalogoContratacionFacade;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
