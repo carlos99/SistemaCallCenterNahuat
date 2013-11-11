@@ -46,4 +46,14 @@
     <application>
         <message-bundle>error-messages</message-bundle>
     </application>
+    <managed-bean>
+        <managed-bean-name>mbPlanillaController1</managed-bean-name>
+        <managed-bean-class>com.isw2.nahuat.backing.MbPlanillaController</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>sbPlanillaFacade1</managed-bean-name>
+        <managed-bean-class>com.isw2.nahuat.session.SbPlanillaFacade</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
 </faces-config>
