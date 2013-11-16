@@ -1,12 +1,43 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
     <h:body>
-        Hello from Facelets
+        <ui:composition template="./resources/template.xhtml">
+            <ui:define name="left">
+
+            </ui:define>
+            <ui:define name="content">
+                <p:growl id="growl" />
+                <p:panel header="Login Page" footer="please enter your credentials" >
+                   <!-- <c:if test="${!empty param.errorLogin}" >
+                        <f:loadBundle var="msj" />
+                        <f:event  type="preRenderComponent" listener="#{plugin.messageError(msj.errorNoLogin)}">
+                            <f:ajax render="growl" />
+                        </f:event>
+                    </c:if--> 
+                    <p:messages id="msgLogin" />
+                    <h:form id="formLogin" >
+                        <p:focus />
+                        <h:panelGrid columns="2">
+                            <h:outputLabel for="lblUser" value="UserName: " />
+                            <h:inputText  id="lblUser" value="#{MbSecurity.user}" required="true" label="User" />
+                            <h:outputLabel for="lblPassword" value="Password: " />
+                            <h:inputSecret  id="lblPassword" value="#{MbSecurity.password}" required="true" label="Password" />
+                            <p:commandButton id="start" value="START" actionListener="#{MbSecurity.login}" update="msgLogin" />
+                            <p:commandButton type="reset" value="RESET" />
+                        </h:panelGrid>
+
+                    </h:form>
+                </p:panel>
+            </ui:define>
+        </ui:composition>
+
     </h:body>
 </html>
 
